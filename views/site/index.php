@@ -1,7 +1,8 @@
 <?php
+use yii\helpers\Html;
+use yii\helpers\HtmlPurifier;
 
-/* @var $this yii\web\View */
-
-$this->title = 'Ювелирные штампы и инструменты';
+$this->title = Html::encode($page->title);
 ?>
 
+<?= HtmlPurifier::process($page->content) ?>

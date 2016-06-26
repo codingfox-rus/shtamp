@@ -44,6 +44,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
+                'admin' => 'admin/pages/index',
                 '<action>' => 'site/<action>'
             ],
         ],

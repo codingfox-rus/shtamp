@@ -6,8 +6,10 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Pages;
 
 class SiteController extends Controller
 {
@@ -49,7 +51,10 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $page = Pages::find()->where(['url' => ''])->one();
+        return $this->render('index', [
+            'page' => $page
+        ]);
     }
 
     public function actionLogin()
