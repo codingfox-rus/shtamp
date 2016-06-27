@@ -49,9 +49,9 @@ class SiteController extends Controller
         ];
     }
 
-    public function actionIndex()
+    public function actionIndex($url = '')
     {
-        $page = Pages::find()->where(['url' => ''])->one();
+        $page = Pages::findOne(['url' => $url]);
         return $this->render('index', [
             'page' => $page
         ]);

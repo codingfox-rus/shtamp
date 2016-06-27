@@ -45,8 +45,8 @@ $config = [
             'rules' => [
                 '' => 'site/index',
                 'admin' => 'admin/pages/index',
-                '<action>' => 'site/<action>'
-            ],
+                '<url:[\w\-]+>' => 'site/index'
+            ]
         ],
     ],
     'modules' => [

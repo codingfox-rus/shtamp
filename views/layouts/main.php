@@ -31,12 +31,12 @@ AppAsset::register($this);
                 <div class="header-content clearfix">
                     <div class="top-menu-wrapper clearfix">
                         <ul class="top-menu">
-                            <li><a href="">Главная</a></li>
-                            <li><a href="">Каталог</a></li>
-                            <li><a href="">Технологии</a></li>
-                            <li><a href="">Оплата и доставка</a></li>
-                            <li><a href="">Контакты</a></li>
-                            <li><a href="">Новинки</a></li>
+                            <li><a href="/">Главная</a></li>
+                            <li><a href="/catalog">Каталог</a></li>
+                            <li><a href="/technologies">Технологии</a></li>
+                            <li><a href="/payment-and-delivery">Оплата и доставка</a></li>
+                            <li><a href="/contact">Контакты</a></li>
+                            <li><a href="/novinki">Новинки</a></li>
                         </ul>
                     </div>
                     <a href="http://www.youtube.com/channel/UCXCXObdaAxDywwo1GNGw9qA" class="go-to-youtube-channel" target="_blank">
@@ -53,41 +53,41 @@ AppAsset::register($this);
         <div class="col-md-4">
             <div class="sidebar">
                 <ul class="left-menu">
-                    <li><a href="">Изготовление ювелирных цепочек</a></li>
-                    <li><a href="">Основные преимущества листовой штамповки</a></li>
-                    <li><a href="">Штампы</a>
+                    <li><a href="/izgotovlenie-yuvelirnyh-tsepochek">Изготовление ювелирных цепочек</a></li>
+                    <li><a href="/osnovnye-preimushhestva-listovoj-shtam">Основные преимущества листовой штамповки</a></li>
+                    <li><a href="#">Штампы</a>
                         <ul>
-                            <li><a href="">Штамп ручной шаговый "Звено цепи"</a></li>
-                            <li><a href="">Комплект штампов ювелирная швенза</a></li>
-                            <li><a href="">Штамп концевик для ювелирной цепи</a></li>
-                            <li><a href="">Штамп ручной вырубной "пуссета"</a></li>
-                            <li><a href="">Штамп совмещенного действия элемент "подвеска"</a></li>
-                            <li><a href="">Штамп чеканочный ювелирный "иконка"</a></li>
-                            <li><a href="">Штамп ювелирный вырубной "крест"</a></li>
-                            <li><a href="">Штамп рельефной формовки "кольцо"</a></li>
-                            <li><a href="">Штамп ручной вырубной "полумесяц"</a></li>
-                            <li><a href="">Штамп полуавтоматический шаговый "звено цепи"</a></li>
-                            <li><a href="">Комплект штампов вырубный ручных "Колодка для медали"</a></li>
-                            <li><a href="">Штамп вырубной ручной "бухтированное ювелирное кольцо"</a></li>
-                            <li><a href="">Штамп для изготовления замковой части ювелирной булавки</a></li>
-                            <li><a href="">Замок ювелирной цепи "Краб"</a></li>
-                            <li><a href="">Замок ювелирной цепи "Карабин"</a></li>
+                            <li><a href="/shtamp-ruchnoj-shagovyj-zveno-tsepi">Штамп ручной шаговый "Звено цепи"</a></li>
+                            <li><a href="/komplekt-shtampov-yuvelirnaya-shvenza">Комплект штампов ювелирная швенза</a></li>
+                            <li><a href="/shtamp-kontsevik-dlya-yuvelirnoj-tsepi">Штамп концевик для ювелирной цепи</a></li>
+                            <li><a href="/shtamp-ruchnoj-vyrubnoj-pusseta">Штамп ручной вырубной "пуссета"</a></li>
+                            <li><a href="/shtamp-sovmeshhennogo-dejstviya-element">Штамп совмещенного действия элемент "подвеска"</a></li>
+                            <li><a href="/shtamp-chekanochnyj-yuvelirnyj-ikonka">Штамп чеканочный ювелирный "иконка"</a></li>
+                            <li><a href="/shtamp-yuvelirnyj-vyrubnoj-krest">Штамп ювелирный вырубной "крест"</a></li>
+                            <li><a href="/shtamp-relefnoj-formovki-koltso">Штамп рельефной формовки "кольцо"</a></li>
+                            <li><a href="/shtamp-ruchnoj-vyrubnoj-polumesyats">Штамп ручной вырубной "полумесяц"</a></li>
+                            <li><a href="/shtamp-poluavtomaticheskij-shagovyj-zv">Штамп полуавтоматический шаговый "звено цепи"</a></li>
+                            <li><a href="/komplekt-shtampov-vyrubnyh-ruchnyh-kol">Комплект штампов вырубный ручных "Колодка для медали"</a></li>
+                            <li><a href="/shtamp-vyrubnoj-ruchnoj-buhtirovannoe">Штамп вырубной ручной "бухтированное ювелирное кольцо"</a></li>
+                            <li><a href="/shtamp-dlya-izgotovleniya-zamkovoj-chast">Штамп для изготовления замковой части ювелирной булавки</a></li>
+                            <li><a href="/zamok-yuvelirnoj-tsepi-krab">Замок ювелирной цепи "Краб"</a></li>
+                            <li><a href="/zamok-yuvelirnoj-tsepi-karabin">Замок ювелирной цепи "Карабин"</a></li>
                         </ul>
                     </li>
-                    <li><a href="">Прессы</a>
+                    <li><a href="#">Прессы</a>
                         <ul>
-                            <li><a href="">Пресс винтовой ручной</a></li>
-                            <li><a href="">Пресс электрогидравлический ПЭгМ-8/40</a></li>
-                            <li><a href="">Пресс гидравлический ПГМ (ю) 100-16</a></li>
-                            <li><a href="">Пресс пневматический ППЮ-100</a></li>
-                            <li><a href="">Пресс эксцентировый ручной</a></li>
+                            <li><a href="/press-vintovoj-ruchnoj">Пресс винтовой ручной</a></li>
+                            <li><a href="/press-elektrogidravlicheskij-pegm-840">Пресс электрогидравлический ПЭгМ-8/40</a></li>
+                            <li><a href="/press-gidravlicheskij-pgm-yu-100-16">Пресс гидравлический ПГМ (ю) 100-16</a></li>
+                            <li><a href="/press-pnevmaticheskij-ppyu-100">Пресс пневматический ППЮ-100</a></li>
+                            <li><a href="/press-ekstsentrikovyj-ruchnoj">Пресс эксцентировый ручной</a></li>
                         </ul>
                     </li>
-                    <li><a href="">Приспособление для изготовления панцирной ювелирной цепи</a></li>
-                    <li><a href="">Опока литейная цельнометаллическая перфорированная</a></li>
-                    <li><a href="">Сменный валик к ювелирным вальцам</a></li>
-                    <li><a href="">Цанга машиностроительная</a></li>
-                    <li><a href="">Прочая продукция</a></li>
+                    <li><a href="/prisposoblenie-dlya-izgotovleniya-pan">Приспособление для изготовления панцирной ювелирной цепи</a></li>
+                    <li><a href="/opoka-litejnaya-tselnometallicheskaya">Опока литейная цельнометаллическая перфорированная</a></li>
+                    <li><a href="/smennyj-valik-k-yuvelirnym-valtsam">Сменный валик к ювелирным вальцам</a></li>
+                    <li><a href="/tsanga-mashinostroitelnaya">Цанга машиностроительная</a></li>
+                    <li><a href="/prochaya-produktsiya">Прочая продукция</a></li>
                 </ul>
             </div>
         </div>
