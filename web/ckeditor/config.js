@@ -10,7 +10,7 @@ CKEDITOR.editorConfig = function( config ) {
 
     config.extraPlugins = 'youtube';
     config.toolbar += [{ name: 'insert', items: ['Image', 'Youtube']}];
-    config.youtube_width = '640';
-    config.youtube_height = '480';
+    config.youtube_width = '480';
+    config.youtube_height = '320';
     config.youtube_related = true;
 };

@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\HtmlPurifier;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
@@ -15,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Обновить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Вы уверены?',
@@ -33,7 +34,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'keywords',
             'description:ntext',
-            'content:ntext',
+            [
+                'attribute' => 'content',
+                'format' => 'raw',
+                'value' => HtmlPurifier::process($model->content)
+            ],
         ],
     ]) ?>
 

@@ -13,6 +13,21 @@ class User extends ActiveRecord implements IdentityInterface
         return 'users';
     }
 
+    public function rules()
+    {
+        return [
+            [['username', 'password'], 'required']
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'username' => 'Имя пользователя',
+            'password' => 'Пароль'
+        ];
+    }
+
     /**
      * @inheritdoc
      */
