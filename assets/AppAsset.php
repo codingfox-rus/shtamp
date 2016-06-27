@@ -23,6 +23,8 @@ class AppAsset extends AssetBundle
         'css/font-awesome.css'
     ];
     public $js = [
+        'ckeditor/ckeditor.js',
+        'js/admin.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
