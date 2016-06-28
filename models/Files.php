@@ -6,14 +6,13 @@ use Yii;
 use yii\web\UploadedFile;
 
 /**
- * This is the model class for table "catalog".
+ * This is the model class for table "files".
  *
  * @property integer $id
- * @property string $image
+ * @property string $path
  * @property string $desc
- * @property integer $published
  */
-class Catalog extends \yii\db\ActiveRecord
+class Files extends \yii\db\ActiveRecord
 {
     public $file;
     /**
@@ -21,7 +20,7 @@ class Catalog extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'catalog';
+        return 'files';
     }
 
     /**
@@ -30,9 +29,9 @@ class Catalog extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['desc', 'published'], 'required'],
-            [['published'], 'integer'],
-            [['image', 'desc'], 'string', 'max' => 255],
+            [['desc'], 'required'],
+            [['path'], 'string', 'max' => 512],
+            [['desc'], 'string', 'max' => 1024],
             [['file'], 'file']
         ];
     }
@@ -44,9 +43,8 @@ class Catalog extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'image' => 'Изображение',
+            'path' => 'Путь к файлу',
             'desc' => 'Описание',
-            'published' => 'Опубликовано',
             'file' => 'Загрузить файл'
         ];
     }
@@ -57,15 +55,15 @@ class Catalog extends \yii\db\ActiveRecord
             $this->file = UploadedFile::getInstance($this, 'file');
 
             if ( !empty($this->file) ) {
-                $path = 'img/catalog/' . $this->file->baseName . "." . $this->file->extension;
+                $path = 'files/' . uniqid() . "." . $this->file->extension;
                 $this->file->saveAs($path);
                 if ( !$this->isNewRecord ) {
-                    $oldFile = Yii::getAlias('@webroot') . $this->image;
+                    $oldFile = Yii::getAlias('@webroot') . $this->path;
                     if ( file_exists($oldFile) ) {
                         unlink($oldFile);
                     }
                 }
-                $this->image = '/' . $path;
+                $this->path = '/' . $path;
             }
 
             return true;
@@ -76,7 +74,7 @@ class Catalog extends \yii\db\ActiveRecord
     public function beforeDelete()
     {
         if (parent::beforeDelete()) {
-            $file = Yii::getAlias('@webroot') . $this->image;
+            $file = Yii::getAlias('@webroot') . $this->path;
             if ( file_exists($file) ) {
                 unlink($file);
             }

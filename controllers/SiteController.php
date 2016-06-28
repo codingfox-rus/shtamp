@@ -67,7 +67,7 @@ class SiteController extends Controller
     public function actionCatalog()
     {
         $page = Pages::findOne(['url' => 'catalog']);
-        $images = Catalog::find()->where(['published' => true])->orderBy('id desc')->all();
+        $images = Catalog::find()->where(['published' => true])->orderBy('image desc')->all();
 
         return $this->render('catalog', [
             'page' => $page,
@@ -78,7 +78,7 @@ class SiteController extends Controller
     public function actionNovelties()
     {
         $page = Pages::findOne(['url' => 'novinki']);
-        $images = Novelties::find()->where(['published' => true])->orderBy('id desc')->all();
+        $images = Novelties::find()->where(['published' => true])->orderBy('image desc')->all();
 
         return $this->render('novelties', [
             'page' => $page,

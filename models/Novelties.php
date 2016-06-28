@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "novelties".
@@ -14,6 +15,7 @@ use Yii;
  */
 class Novelties extends \yii\db\ActiveRecord
 {
+    public $file;
     /**
      * @inheritdoc
      */
@@ -28,9 +30,10 @@ class Novelties extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['image', 'desc', 'published'], 'required'],
+            [['desc', 'published'], 'required'],
             [['published'], 'integer'],
             [['image', 'desc'], 'string', 'max' => 255],
+            [['file'], 'file']
         ];
     }
 
@@ -44,6 +47,42 @@ class Novelties extends \yii\db\ActiveRecord
             'image' => 'Изображение',
             'desc' => 'Описание',
             'published' => 'Опубликовано',
+            'file' => 'Загрузить файл'
         ];
+    }
+
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            $this->file = UploadedFile::getInstance($this, 'file');
+
+            if ( !empty($this->file) ) {
+                $path = 'img/novelties/' . $this->file->baseName . "." . $this->file->extension;
+                $this->file->saveAs($path);
+                if ( !$this->isNewRecord ) {
+                    $oldFile = Yii::getAlias('@webroot') . $this->image;
+                    if ( file_exists($oldFile) ) {
+                        unlink($oldFile);
+                    }
+                }
+                $this->image = '/' . $path;
+            }
+
+            return true;
+        }
+        return false;
+    }
+
+    public function beforeDelete()
+    {
+        if (parent::beforeDelete()) {
+            $file = Yii::getAlias('@webroot') . $this->image;
+            if ( file_exists($file) ) {
+                unlink($file);
+            }
+
+            return true;
+        }
+        return false;
     }
 }
