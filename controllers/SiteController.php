@@ -10,6 +10,8 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Pages;
+use app\models\Catalog;
+use app\models\Novelties;
 
 class SiteController extends Controller
 {
@@ -54,6 +56,28 @@ class SiteController extends Controller
         $page = Pages::findOne(['url' => $url]);
         return $this->render('index', [
             'page' => $page
+        ]);
+    }
+
+    public function actionCatalog()
+    {
+        $page = Pages::findOne(['url' => 'catalog']);
+        $images = Catalog::find()->where(['published' => true])->orderBy('id desc')->all();
+
+        return $this->render('catalog', [
+            'page' => $page,
+            'images' => $images
+        ]);
+    }
+
+    public function actionNovelties()
+    {
+        $page = Pages::findOne(['url' => 'novinki']);
+        $images = Novelties::find()->where(['published' => true])->orderBy('id desc')->all();
+
+        return $this->render('novelties', [
+            'page' => $page,
+            'images' => $images
         ]);
     }
 

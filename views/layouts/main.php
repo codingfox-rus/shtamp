@@ -36,7 +36,7 @@ AppAsset::register($this);
                             <li><a href="/technologies">Технологии</a></li>
                             <li><a href="/payment-and-delivery">Оплата и доставка</a></li>
                             <li><a href="/contact">Контакты</a></li>
-                            <li><a href="/novinki">Новинки</a></li>
+                            <li><a href="/novelties">Новинки</a></li>
                         </ul>
                     </div>
                     <a href="http://www.youtube.com/channel/UCXCXObdaAxDywwo1GNGw9qA" class="go-to-youtube-channel" target="_blank">

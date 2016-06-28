@@ -44,6 +44,8 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
+                'catalog' => 'site/catalog',
+                'novelties' => 'site/novelties',
                 'admin' => 'admin/admin/index',
                 '<url:[\w\-]+>' => 'site/index'
             ]

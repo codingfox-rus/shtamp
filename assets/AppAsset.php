@@ -20,11 +20,13 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
         'css/style.css',
-        'css/font-awesome.css'
+        'css/font-awesome.css',
+        'prettyPhoto/css/prettyPhoto.css'
     ];
     public $js = [
         'ckeditor/ckeditor.js',
-        'js/admin.js'
+        'prettyPhoto/js/jquery.prettyPhoto.js',
+        'js/script.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
