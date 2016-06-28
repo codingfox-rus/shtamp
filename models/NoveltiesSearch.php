@@ -41,7 +41,7 @@ class NoveltiesSearch extends Novelties
      */
     public function search($params)
     {
-        $query = Novelties::find();
+        $query = Novelties::find()->orderBy('id desc');
 
         // add conditions that should always apply here
 

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\CatalogSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Изображение в каталоге';
+$this->title = 'Изображения в каталоге';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="catalog-index">
@@ -25,9 +25,24 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'image',
+            [
+                'attribute' => 'image',
+                'format' => 'raw',
+                'value' => function ($data) {
+                    return Html::img($data->image, ['style' => 'width: 50%']);
+                }
+            ],
             'desc',
-            'published',
+            [
+                'attribute' => 'published',
+                'format' => 'raw',
+                'value' => function ($data) {
+                    if ( $data->published == 1 ) {
+                        return 'Да';
+                    }
+                    return 'Нет';
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

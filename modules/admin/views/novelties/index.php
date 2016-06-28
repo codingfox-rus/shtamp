@@ -25,9 +25,24 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'image',
+            [
+                'attribute' => 'image',
+                'format' => 'raw',
+                'value' => function ($data) {
+                    return Html::img($data->image, ['style' => 'width: 50%']);
+                }
+            ],
             'desc',
-            'published',
+            [
+                'attribute' => 'published',
+                'format' => 'raw',
+                'value' => function ($data) {
+                    if ( $data->published == 1 ) {
+                        return 'Да';
+                    }
+                    return 'Нет';
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

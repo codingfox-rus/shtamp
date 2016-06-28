@@ -29,9 +29,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'image',
+            [
+                'attribute' => 'image',
+                'format' => 'raw',
+                'value' => Html::img($model->image, ['style' => 'width: 50%'])
+            ],
             'desc',
-            'published',
+            [
+                'attribute' => 'published',
+                'format' => 'raw',
+                'value' => $model->published == 1 ? 'Да' : 'Нет'
+            ],
         ],
     ]) ?>
 
