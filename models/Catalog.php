@@ -30,7 +30,6 @@ class Catalog extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['desc', 'published'], 'required'],
             [['published'], 'integer'],
             [['image', 'desc'], 'string', 'max' => 255],
             [['file'], 'file']

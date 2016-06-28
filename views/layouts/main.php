@@ -92,7 +92,7 @@ AppAsset::register($this);
             </div>
         </div>
         <div class="col-md-8">
-            <div class="main-content">
+            <div class="content">
                 <?= $content ?>
             </div>
         </div>
