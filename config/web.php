@@ -7,6 +7,12 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+            'itemFile' => '@app/components/rbac/items.php',
+            'assignmentFile' => '@app/components/rbac/assignments.php',
+            'ruleFile' => '@app/components/rbac/rules.php'
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'Shtamp new website',

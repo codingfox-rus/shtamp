@@ -11,6 +11,12 @@ $config = [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
     'components' => [
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+            'itemFile' => '@app/components/rbac/items.php',
+            'assignmentFile' => '@app/components/rbac/assignments.php',
+            'ruleFile' => '@app/components/rbac/rules.php'
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

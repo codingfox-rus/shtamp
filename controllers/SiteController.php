@@ -20,13 +20,18 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
+                'only' => ['novelties', 'logout'],
                 'rules' => [
                     [
                         'actions' => ['logout'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
+                    [
+                        'actions' => ['novelties'],
+                        'allow' => true,
+                        'roles' => ['user']
+                    ]
                 ],
             ],
             'verbs' => [
@@ -83,6 +88,8 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
+        $this->layout = '@app/modules/admin/views/layouts/admin';
+
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -101,6 +108,11 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionDebugLogout()
+    {
+        Yii::$app->user->logout();
     }
 
     public function actionContact()
