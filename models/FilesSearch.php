@@ -41,7 +41,7 @@ class FilesSearch extends Files
      */
     public function search($params)
     {
-        $query = Files::find();
+        $query = Files::find()->orderBy('id desc');
 
         // add conditions that should always apply here
 

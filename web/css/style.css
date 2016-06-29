@@ -7,7 +7,7 @@ body {
 
 /*------------ HEADER ------------*/
 .header {
-	background: #4e5944;
+	background: #369A1E;
 	padding: 20px 0;
 }
 
@@ -57,9 +57,11 @@ body {
 
 .go-to-youtube-channel {
 	display: block;
-	float: left;
+	float: right;
 	width: 150px;
 	margin-top: -20px;
+	color: #fff;
+	font-weight: bold;
 }
 
 .go-to-youtube-channel img {
@@ -75,10 +77,8 @@ body {
 
 .top-menu-wrapper {
     float: left;
-    margin-top: 15px;
     width: 80%;
     text-align: center;
-	/*background: #2E885A;*/
 }
 
 .top-menu {
@@ -109,7 +109,7 @@ body {
 
 /*------------ CONTENTS ------------*/
 .content {
-	margin-top: 20px;
+	margin: 20px 20px 20px 0;
 	overflow: hidden;
 }
 
@@ -127,10 +127,6 @@ h2 {
 	letter-spacing: 2px;
 	margin: 0;
 	text-transform: uppercase;
-}
-
-p {
-	margin: 0 0 24px;
 }
 
 .sidebar {
@@ -187,7 +183,7 @@ p {
 /*------------ FOOTER ------------*/
 
 .footer {
-	background: #58614e;
+	background: #369A1E;
 	border-top: 2px solid #fff;
 	padding: 20px 0;
 }

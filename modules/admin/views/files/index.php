@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'path',
                 'format' => 'raw',
                 'value' => function($data) {
-                    return Html::a(Yii::getAlias('@web') . $data->path, 'Скачать');
+                    return Html::a('Скачать', Yii::getAlias('@web') . $data->path);
                 }
             ],
             'desc',
