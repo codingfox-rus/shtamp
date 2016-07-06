@@ -7,6 +7,10 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
+        'assetManager' => [
+            'appendTimestamp' => true,
+            'linkAssets' => true
+        ],
         'authManager' => [
             'class' => 'yii\rbac\PhpManager',
             'itemFile' => '@app/components/rbac/items.php',
@@ -76,6 +80,8 @@ if (YII_ENV_DEV) {
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
     ];
+
+    $config['components']['assetManager']['forceCopy'] = true;
 }
 
 return $config;

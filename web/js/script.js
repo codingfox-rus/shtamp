@@ -1,11 +1,10 @@
 $(function(){
-    $(function(){
-        CKEDITOR.replace("pages-content");
+    CKEDITOR.timestamp='ABCD';
+    CKEDITOR.replace("pages-content");
 
-        $("#w0").submit(function(){
-            for (name in CKEDITOR.instances) {
-                CKEDITOR.instances[name].updateElement();
-            }
-        });
+    $("#w0").submit(function(){
+        for (name in CKEDITOR.instances) {
+            CKEDITOR.instances[name].updateElement();
+        }
     });
 });

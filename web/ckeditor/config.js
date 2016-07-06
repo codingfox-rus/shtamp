@@ -8,9 +8,10 @@ CKEDITOR.editorConfig = function( config ) {
     config.enterMode = CKEDITOR.ENTER_BR;
     config.shiftEnterMode = CKEDITOR.ENTER_P;
 
-    config.extraPlugins = 'youtube';
+    config.extraPlugins = 'youtube,spoiler';
+
     config.toolbar += [{ name: 'insert', items: ['Image', 'Youtube']}];
     config.youtube_width = '480';
     config.youtube_height = '320';
-    config.youtube_related = true;
+    config.youtube_related = false;
 };
