@@ -9,7 +9,7 @@ $config = [
     'components' => [
         'assetManager' => [
             'appendTimestamp' => true,
-            'linkAssets' => true
+            //'linkAssets' => true
         ],
         'authManager' => [
             'class' => 'yii\rbac\PhpManager',
@@ -81,7 +81,7 @@ if (YII_ENV_DEV) {
         'class' => 'yii\gii\Module',
     ];
 
-    $config['components']['assetManager']['forceCopy'] = true;
+    //$config['components']['assetManager']['forceCopy'] = true;
 }
 
 return $config;
