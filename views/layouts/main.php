@@ -86,7 +86,7 @@ AppAsset::register($this);
                         <ul>
                             <li><a href="/press-vintovoj-ruchnoj">Пресс винтовой ручной</a></li>
                             <li><a href="/press-elektrogidravlicheskij-pegm-840">Пресс электрогидравлический ПЭгМ-8/40</a></li>
-                            <li><a href="/press-gidravlicheskij-pgm-yu-100-16">Пресс гидравлический ПГМ (ю) 100-16</a></li>
+                            <li><a href="/press-gidravlicheskij-pgm-yu-100-16">Пресс гидравлический ПГМ (ю) 100(50)-16</a></li>
                             <li><a href="/press-pnevmaticheskij-ppyu-100">Пресс пневматический ППЮ-100</a></li>
                             <li><a href="/press-ekstsentrikovyj-ruchnoj">Пресс эксцентировый ручной</a></li>
                         </ul>
