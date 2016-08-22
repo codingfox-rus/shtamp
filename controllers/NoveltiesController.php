@@ -1,19 +1,19 @@
 <?php
 
-namespace app\modules\admin\controllers;
+namespace app\controllers;
 
 use Yii;
-use app\models\Catalog;
-use app\models\CatalogSearch;
+use app\models\Novelties;
+use app\models\NoveltiesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
 /**
- * CatalogController implements the CRUD actions for Catalog model.
+ * NoveltiesController implements the CRUD actions for Novelties model.
  */
-class CatalogController extends Controller
+class NoveltiesController extends Controller
 {
     public $layout = 'admin';
     /**
@@ -41,12 +41,12 @@ class CatalogController extends Controller
     }
 
     /**
-     * Lists all Catalog models.
+     * Lists all Novelties models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CatalogSearch();
+        $searchModel = new NoveltiesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -56,7 +56,7 @@ class CatalogController extends Controller
     }
 
     /**
-     * Displays a single Catalog model.
+     * Displays a single Novelties model.
      * @param integer $id
      * @return mixed
      */
@@ -68,13 +68,13 @@ class CatalogController extends Controller
     }
 
     /**
-     * Creates a new Catalog model.
+     * Creates a new Novelties model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Catalog();
+        $model = new Novelties();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -86,7 +86,7 @@ class CatalogController extends Controller
     }
 
     /**
-     * Updates an existing Catalog model.
+     * Updates an existing Novelties model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -105,7 +105,7 @@ class CatalogController extends Controller
     }
 
     /**
-     * Deletes an existing Catalog model.
+     * Deletes an existing Novelties model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -118,15 +118,15 @@ class CatalogController extends Controller
     }
 
     /**
-     * Finds the Catalog model based on its primary key value.
+     * Finds the Novelties model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Catalog the loaded model
+     * @return Novelties the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Catalog::findOne($id)) !== null) {
+        if (($model = Novelties::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

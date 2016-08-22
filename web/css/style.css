@@ -11,6 +11,10 @@ body {
 	padding: 20px 0;
 }
 
+.header a {
+	color: #fff;
+}
+
 /** logo **/
 .logo {
 	float: left;
@@ -76,12 +80,13 @@ body {
 /*** Верхнее меню ***/
 
 .top-menu-wrapper {
-    float: left;
-    width: 80%;
+    position: relative;
     text-align: center;
 }
 
 .top-menu {
+	position: absolute;
+	top: 90px;
 	list-style: none;
 	margin: 0 auto;
 	padding: 0;
@@ -94,7 +99,7 @@ body {
 
 .top-menu li > a {
 	display: block;
-	padding: 15px 20px;
+	padding: 15px 15px;
 	color: #fff;
 	text-decoration: underline;
 	text-transform: uppercase;
@@ -186,6 +191,10 @@ h2 {
 	background: #369A1E;
 	border-top: 2px solid #fff;
 	padding: 20px 0;
+}
+
+.footer a {
+	color: #fff;
 }
 
 .footer p {

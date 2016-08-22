@@ -27,28 +27,26 @@ AppAsset::register($this);
                     <p>Ювелирные штампы и инструменты</p>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6">
+                <div class="top-menu-wrapper clearfix">
+                    <ul class="top-menu">
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/catalog">Каталог</a></li>
+                        <li><a href="/technologies">Технологии</a></li>
+                        <li><a href="/contact">Контакты</a></li>
+                        <li><a href="/novelties">Новинки</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
                 <div class="header-content clearfix">
                     <div class="go-to-youtube-channel">
                         <a href="http://www.youtube.com/channel/UCXCXObdaAxDywwo1GNGw9qA" target="_blank">
                             <img src="/img/YouTube-logo.png" alt="Канал YouTube">
                         </a>
                         <p>т. 8 (8352) 36-62-62</p>
+                        <p><a href="mailto:shtamp-21@mail.ru">shtamp-21@mail.ru</a></p>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="top-menu-wrapper clearfix">
-                    <ul class="top-menu">
-                        <li><a href="/">Главная</a></li>
-                        <li><a href="/catalog">Каталог</a></li>
-                        <li><a href="/technologies">Технологии</a></li>
-                        <li><a href="/payment-and-delivery">Оплата и доставка</a></li>
-                        <li><a href="/contact">Контакты</a></li>
-                        <li><a href="/novelties">Новинки</a></li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -62,7 +60,6 @@ AppAsset::register($this);
                 <ul class="left-menu">
                     <li><a href="/izgotovlenie-yuvelirnyh-tsepochek">Изготовление ювелирных цепочек</a></li>
                     <li><a href="#">Ювелирные приспособления</a></li>
-                    <li><a href="/osnovnye-preimushhestva-listovoj-shtam">Основные преимущества листовой штамповки</a></li>
                     <li><a href="#">Штампы</a>
                         <ul>
                             <li><a href="/shtamp-ruchnoj-shagovyj-zveno-tsepi">Штамп ручной шаговый "Звено цепи"</a></li>
@@ -109,7 +106,9 @@ AppAsset::register($this);
 </div>
 
 <div class="footer">
-    <p>&copy; <span>Copyright</span> <?php echo date('Y'); ?> | СпецТехОснастка | <strong>т. 8 (8352) 36-62-62</strong></p>
+    <p>&copy; <span>Copyright</span> <?php echo date('Y'); ?> |
+        СпецТехОснастка | <strong>т. 8 (8352) 36-62-62</strong> |
+        <strong><a href="mailto:shtamp-21@mail.ru">shtamp-21@mail.ru</a></strong></p>
 </div>
 
 <?php $this->endBody() ?>

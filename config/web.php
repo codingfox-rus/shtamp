@@ -56,14 +56,11 @@ $config = [
                 '' => 'site/index',
                 'catalog' => 'site/catalog',
                 'novelties' => 'site/novelties',
-                'admin' => 'admin/admin/index',
+                'admin/<controller>/<action>' => '<controller>/<action>',
+                'admin' => 'site/admin',
+                'login' => 'site/login',
                 '<url:[\w\-]+>' => 'site/index'
             ]
-        ],
-    ],
-    'modules' => [
-        'admin' => [
-            'class' => 'app\modules\admin\Admin',
         ],
     ],
     'params' => $params,
@@ -81,7 +78,7 @@ if (YII_ENV_DEV) {
         'class' => 'yii\gii\Module',
     ];
 
-    $config['components']['db'] = require(__DIR__ . '/db-local.php');
+    //$config['components']['db'] = require(__DIR__ . '/db-local.php');
 
     //$config['components']['assetManager']['forceCopy'] = true;
 }

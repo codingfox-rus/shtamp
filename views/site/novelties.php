@@ -4,6 +4,16 @@ $pageTitle = Html::encode($page->title);
 $this->title = $pageTitle;
 ?>
 
+<?php
+if ( !Yii::$app->user->isGuest ) {
+    echo Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form']);
+    echo Html::submitButton(
+        'Выйти (' . Yii::$app->user->identity->username . ')',
+        ['class' => 'btn btn-link']
+    );
+    echo Html::endForm();
+}
+?>
 <div class="gallery-img-wrapper clearfix">
     <ul>
         <?php
