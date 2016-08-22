@@ -59,7 +59,16 @@ AppAsset::register($this);
             <div class="sidebar">
                 <ul class="left-menu">
                     <li><a href="/izgotovlenie-yuvelirnyh-tsepochek">Изготовление ювелирных цепочек</a></li>
-                    <li><a href="#">Ювелирные приспособления</a></li>
+                    <li><a href="#">Ювелирные приспособления</a>
+                        <ul>
+                            <li><a href="/prisposoblenie-dlya-izgotovleniya-pan">Приспособление для изготовления панцирной ювелирной цепи</a></li>
+                            <li><a href="/opoka-litejnaya-tselnometallicheskaya">Опока литейная цельнометаллическая перфорированная</a></li>
+                            <li><a href="/smennyj-valik-k-yuvelirnym-valtsam">Сменный валик к ювелирным вальцам</a></li>
+                            <li><a href="/tsanga-mashinostroitelnaya">Цанга машиностроительная</a></li>
+                            <li><a href="/filiera">Фильера для изготовления полой трубки</a></li>
+                            <li><a href="/prochaya-produktsiya">Прочая продукция</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Штампы</a>
                         <ul>
                             <li><a href="/shtamp-ruchnoj-shagovyj-zveno-tsepi">Штамп ручной шаговый "Звено цепи"</a></li>
@@ -88,12 +97,6 @@ AppAsset::register($this);
                             <li><a href="/press-ekstsentrikovyj-ruchnoj">Пресс эксцентировый ручной</a></li>
                         </ul>
                     </li>
-                    <li><a href="/prisposoblenie-dlya-izgotovleniya-pan">Приспособление для изготовления панцирной ювелирной цепи</a></li>
-                    <li><a href="/opoka-litejnaya-tselnometallicheskaya">Опока литейная цельнометаллическая перфорированная</a></li>
-                    <li><a href="/smennyj-valik-k-yuvelirnym-valtsam">Сменный валик к ювелирным вальцам</a></li>
-                    <li><a href="/tsanga-mashinostroitelnaya">Цанга машиностроительная</a></li>
-                    <li><a href="/filiera">Фильера для изготовления полой трубки</a></li>
-                    <li><a href="/prochaya-produktsiya">Прочая продукция</a></li>
                 </ul>
             </div>
         </div>
