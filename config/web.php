@@ -59,6 +59,7 @@ $config = [
                 'admin/<controller>/<action>' => '<controller>/<action>',
                 'admin' => 'site/admin',
                 'login' => 'site/login',
+                'test' => 'site/test',
                 '<url:[\w\-]+>' => 'site/index'
             ]
         ],

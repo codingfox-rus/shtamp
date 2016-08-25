@@ -1,7 +1,5 @@
 <?php
-use yii\helpers\Html;
-$pageTitle = Html::encode($page->title);
-$this->title = $pageTitle;
+$this->title = 'Тестовая страница';
 ?>
 
 <div class="row">
@@ -61,24 +59,4 @@ $this->title = $pageTitle;
             </ul>
         </div>
     </div>
-</div>
-
-<div class="gallery-img-wrapper clearfix">
-
-    <ul class="all-chains">
-    <?php
-        if ( !empty($images) ) {
-            foreach ($images as $img) {
-                $imgPath = Html::encode($img->image);
-    ?>
-                <li>
-                    <a href="<?= $imgPath ?>">
-                        <img src="<?= $imgPath ?>" alt="<?= $img->desc ?>">
-                    </a>
-                </li>
-    <?php
-            }
-        }
-    ?>
-    </ul>
 </div>
