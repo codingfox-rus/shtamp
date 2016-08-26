@@ -120,13 +120,25 @@ class SiteController extends Controller
 
     public function actionContact()
     {
+        $page = Pages::findOne(['url' => 'contact']);
         $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('contactFormSubmitted');
+            $to = Yii::$app->params['adminEmail'];
+            $from = Yii::$app->params['contactEmail'];
+
+            Yii::$app->mailer->compose()
+                ->setTo($to)
+                ->setFrom([$from => Yii::$app->name])
+                ->setSubject($model->subject)
+                ->setTextBody($model->message)
+                ->send();
 
             return $this->refresh();
         }
         return $this->render('contact', [
+            'page' => $page,
             'model' => $model,
         ]);
     }

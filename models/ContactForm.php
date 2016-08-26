@@ -3,19 +3,18 @@
 namespace app\models;
 
 use Yii;
-use yii\base\Model;
 
 /**
  * ContactForm is the model behind the contact form.
  */
-class ContactForm extends Model
+class ContactForm extends \yii\db\ActiveRecord
 {
-    public $name;
-    public $email;
-    public $subject;
-    public $body;
     public $verifyCode;
 
+    public static function tableName()
+    {
+        return 'feedbacks';
+    }
 
     /**
      * @return array the validation rules.
@@ -24,9 +23,10 @@ class ContactForm extends Model
     {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
+            [['name', 'email', 'subject', 'message'], 'required'],
             // email has to be a valid email address
             ['email', 'email'],
+            ['date', 'safe'],
             // verifyCode needs to be entered correctly
             ['verifyCode', 'captcha'],
         ];
@@ -38,25 +38,19 @@ class ContactForm extends Model
     public function attributeLabels()
     {
         return [
-            'verifyCode' => 'Verification Code',
+            'name' => 'Имя',
+            'email' => 'Email',
+            'subject' => 'Тема',
+            'message' => 'Сообщение',
+            'date' => 'Дата',
+            'verifyCode' => 'Проверочный код',
         ];
     }
 
-    /**
-     * Sends an email to the specified email address using the information collected by this model.
-     * @param string $email the target email address
-     * @return boolean whether the model passes validation
-     */
-    public function contact($email)
+    public function beforeSave($insert)
     {
-        if ($this->validate()) {
-            Yii::$app->mailer->compose()
-                ->setTo($email)
-                ->setFrom([$this->email => $this->name])
-                ->setSubject($this->subject)
-                ->setTextBody($this->body)
-                ->send();
-
+        if (parent::beforeSave($insert)) {
+            $this->date = date("Y-m-d H:i:s");
             return true;
         }
         return false;
