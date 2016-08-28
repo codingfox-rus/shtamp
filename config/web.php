@@ -62,7 +62,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '' => 'site/index',
+                '' => 'site/main-page',
                 'admin/<controller>/<action>' => '<controller>/<action>',
                 'catalog' => 'site/catalog',
                 'novelties' => 'site/novelties',
@@ -89,7 +89,7 @@ if (YII_ENV_DEV) {
         'class' => 'yii\gii\Module',
     ];
 
-    $config['components']['db'] = require(__DIR__ . '/db-local.php');
+    //$config['components']['db'] = require(__DIR__ . '/db-local.php');
 
     //$config['components']['assetManager']['forceCopy'] = true;
 }

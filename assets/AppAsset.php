@@ -23,13 +23,15 @@ class AppAsset extends AssetBundle
         'prettyPhoto/css/prettyPhoto.css',
         'spoiler/spoiler.css',
         'css/style.css',
+        'css/widgets/spoiler.css'
     ];
     public $js = [
         'ckeditor/ckeditor.js',
         'prettyPhoto/js/jquery.prettyPhoto.js',
         'spoiler/spoiler.js',
         'js/script.js',
-        'js/fixes.js'
+        'js/widgets/spoiler.js',
+        'js/fixes.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

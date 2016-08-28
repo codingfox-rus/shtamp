@@ -1,0 +1,36 @@
+.wspoiler {
+    width: 560px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.wspoiler .header {
+    background-color: #369A1E;
+    padding: 15px 20px;
+}
+
+.wspoiler .header .fa {
+    color: #fff;
+}
+
+.wsp-title {
+    color: #fff;
+    text-decoration: underline;
+    margin-left: 15px;
+}
+
+.wsp-title:hover,
+.wsp-title:active,
+.wsp-title:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.wsp-content {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.wsp-content .iframe {
+    margin: 0 auto;
+}
