@@ -61,18 +61,18 @@ class SiteController extends Controller
         ];
     }
 
-    public function actionIndex($url = '')
+    public function actionIndex()
     {
-        $page = Pages::findOne(['url' => $url]);
+        $page = Pages::findOne(['url' => '']);
         return $this->render('index', [
             'page' => $page
         ]);
     }
 
-    public function actionMainPage()
+    public function actionPage($url = '')
     {
-        $page = Pages::findOne(['url' => '']);
-        return $this->render('main-page', [
+        $page = Pages::findOne(['url' => $url]);
+        return $this->render('page', [
             'page' => $page
         ]);
     }
