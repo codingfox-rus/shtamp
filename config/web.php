@@ -63,14 +63,17 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
-                'admin/<controller>/<action>' => '<controller>/<action>',
                 'catalog' => 'site/catalog',
                 'novelties' => 'site/novelties',
                 'admin' => 'site/admin',
                 'login' => 'site/login',
                 'test' => 'site/test',
                 'contact' => 'site/contact',
-                '<url:[\w\-]+>' => 'site/page'
+                '<url:[\w\-]+>' => 'site/page',
+                //'<action>' => 'site/<action>',
+                '<controller>' => '<controller>/index',
+                'admin/<controller>' => '<controller>/index',
+                'admin/<controller>/<action>' => '<controller>/<action>',
             ]
         ],
     ],

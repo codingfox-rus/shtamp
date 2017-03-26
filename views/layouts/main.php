@@ -22,30 +22,52 @@ AppAsset::register($this);
         <div class="row">
             <div class="col-md-4">
                 <div class="logo">
-                    <a href="/"><i class="fa fa-cogs fa-3x"></i></a><br>
-                    <span>СпецТехОснастка</span>
-                    <p>Ювелирные штампы и инструменты</p>
+                    <a href="/">
+                        <i class="fa fa-cogs fa-3x"></i>
+                    </a>
+                    <br>
+                    <div class="logo-title">СпецТехОснастка</div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="top-menu-wrapper clearfix">
-                    <ul class="top-menu">
-                        <li><a href="/">Главная</a></li>
-                        <li><a href="/catalog">Каталог</a></li>
-                        <li><a href="/technologies">Технологии</a></li>
-                        <li><a href="/contact">Контакты</a></li>
-                        <li><a href="/novelties">Новинки</a></li>
-                    </ul>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-7">
+                        <p class="header-desc">Проектирование и изготовление нестандартного оборудования
+                            (штампы, инструменты) по техническому заданию заказчика</p>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="header-contacts">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div class="go-to-youtube-channel">
+                                            <a href="http://www.youtube.com/channel/UCXCXObdaAxDywwo1GNGw9qA" target="_blank">
+                                                <img src="/img/YouTube-logo.png" alt="Канал YouTube">
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        т. 8 (8352) 36-62-62 <br>
+                                        <a href="mailto:shtamp-21@mail.ru">shtamp-21@yandex.ru</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-2">
-                <div class="header-content clearfix">
-                    <div class="go-to-youtube-channel">
-                        <a href="http://www.youtube.com/channel/UCXCXObdaAxDywwo1GNGw9qA" target="_blank">
-                            <img src="/img/YouTube-logo.png" alt="Канал YouTube">
-                        </a>
-                        <p>т. 8 (8352) 36-62-62</p>
-                        <p><a href="mailto:shtamp-21@mail.ru">shtamp-21@mail.ru</a></p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="top-menu-wrapper clearfix">
+                            <ul class="top-menu">
+                                <li><a href="/">Главная</a></li>
+                                <li><a href="#">Продукция</a></li>
+                                <li><a href="/technologies">Технологии</a></li>
+                                <li><a href="/contact">Контакты</a></li>
+                                <li><a href="/novelties">Новинки</a></li>
+                                <li><a href="#">Реквизиты</a></li>
+                                <!--                        <li><a href="/catalog">Каталог</a></li>-->
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -58,19 +80,18 @@ AppAsset::register($this);
         <div class="col-md-4">
             <div class="sidebar">
                 <ul class="left-menu">
-                    <li><a href="/izgotovlenie-yuvelirnyh-tsepochek">Изготовление ювелирных цепочек</a></li>
-                    <li><a href="#">Ювелирные приспособления</a>
+                    <li><a href="/catalog">Каталог</a></li>
+                    <li>
+                        <a href="#">Ювелирные штампы и приспособления</a>
                         <ul>
-                            <li><a href="/prisposoblenie-dlya-izgotovleniya-pan">Приспособление для изготовления панцирной ювелирной цепи</a></li>
-                            <li><a href="/opoka-litejnaya-tselnometallicheskaya">Опока литейная цельнометаллическая перфорированная</a></li>
-                            <li><a href="/smennyj-valik-k-yuvelirnym-valtsam">Сменный валик к ювелирным вальцам</a></li>
-                            <li><a href="/tsanga-mashinostroitelnaya">Цанга машиностроительная</a></li>
-                            <li><a href="/filiera">Фильера для изготовления полой трубки</a></li>
-                            <li><a href="/prochaya-produktsiya">Прочая продукция</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Штампы</a>
-                        <ul>
+                            <!--
+                            <li><a href="#">Штампы ювелирных цепочек и браслетов</a></li>
+                            <li><a href="#">Штампы ювелирные</a></li>
+                            <li><a href="#">Приспособления</a></li>
+                            -->
+                            <!-- TODO: Здесь добавил сам, нужно согласовать (было в разделе Ювелирные приспособления) -->
+                            <li><a href="/izgotovlenie-yuvelirnyh-tsepochek">Изготовление ювелирных цепочек</a></li>
+                            <!-- Штампы -->
                             <li><a href="/shtamp-ruchnoj-shagovyj-zveno-tsepi">Штамп ручной шаговый "Звено цепи"</a></li>
                             <li><a href="/komplekt-shtampov-yuvelirnaya-shvenza">Комплект штампов ювелирная швенза</a></li>
                             <li><a href="/shtamp-kontsevik-dlya-yuvelirnoj-tsepi">Штамп концевик для ювелирной цепи</a></li>
@@ -86,17 +107,54 @@ AppAsset::register($this);
                             <li><a href="/shtamp-dlya-izgotovleniya-zamkovoj-chast">Штамп для изготовления замковой части ювелирной булавки</a></li>
                             <li><a href="/zamok-yuvelirnoj-tsepi-krab">Замок ювелирной цепи "Краб"</a></li>
                             <li><a href="/zamok-yuvelirnoj-tsepi-karabin">Замок ювелирной цепи "Карабин"</a></li>
+                            <!-- Приспособления -->
+                            <li><a href="/prisposoblenie-dlya-izgotovleniya-pan">Приспособление для изготовления панцирной ювелирной цепи</a></li>
+                            <li><a href="/opoka-litejnaya-tselnometallicheskaya">Опока литейная цельнометаллическая перфорированная</a></li>
+                            <li><a href="/smennyj-valik-k-yuvelirnym-valtsam">Сменный валик к ювелирным вальцам</a></li>
+                            <li><a href="/filiera">Фильера для изготовления полой трубки</a></li>
+                            <li><a href="/prochaya-produktsiya">Прочая продукция</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Прессы</a>
+                    <li>
+                        <a href="#">Штампы листовой штамповки</a>
                         <ul>
-                            <li><a href="/press-vintovoj-ruchnoj">Пресс винтовой ручной</a></li>
-                            <li><a href="/press-elektrogidravlicheskij-pegm-840">Пресс электрогидравлический ПЭгМ-8/40</a></li>
-                            <li><a href="/press-gidravlicheskij-pgm-yu-100-16">Пресс гидравлический ПГМ (ю) 100(50)-16</a></li>
-                            <li><a href="/press-pnevmaticheskij-ppyu-100">Пресс пневматический ППЮ-100</a></li>
-                            <li><a href="/press-ekstsentrikovyj-ruchnoj">Пресс эксцентировый ручной</a></li>
+                            <li><a href="#">Штамп для вырубки круглой печатной платы</a></li>
+                            <li><a href="#">Штамп для изготовления приборной панели</a></li>
+                            <li><a href="#">Штамп для вырубки отвествия в алюминиевом профиле</a></li>
                         </ul>
                     </li>
+                    <li><a href="#">Пресс-формы и литьевые формы</a></li>
+                    <li><a href="#">Фильера экструзионная</a></li>
+                    <li>
+                        <a href="#">Прессы</a>
+                        <ul>
+                            <li><a href="/press-vintovoj-ruchnoj">Пресс винтовой</a></li>
+                            <li><a href="/press-gidravlicheskij-pgm-yu-100-16">Пресс гидравлический ПГМ(ю)</a></li>
+                            <li><a href="/press-pnevmaticheskij-ppyu-100">Пресс пневматический ППЮ-100</a></li>
+                            <li><a href="/press-ekstsentrikovyj-ruchnoj">Пресс эксцентриковый ручной</a></li>
+                            <li><a href="/press-elektrogidravlicheskij-pegm-840">Пресс электрогидравлический ПЭгМ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Нестандартное оборудование и приспособления</a>
+                        <ul>
+                            <li><a href="/tsanga-mashinostroitelnaya">Цанга машиностроительная</a></li>
+                            <li><a href="#">Метчик</a></li>
+                            <li><a href="#">Комплект приспособлений для опрессовки шнурка</a></li>
+                        </ul>
+                    </li>
+                    <!--
+                    <li>
+                        <a href="#">Прессы</a>
+                        <ul>
+                            <li><a href="">Пресс винтовой ручной</a></li>
+                            <li><a href="">Пресс электрогидравлический ПЭгМ-8/40</a></li>
+                            <li><a href="">Пресс гидравлический ПГМ (ю) 100(50)-16</a></li>
+                            <li><a href="">Пресс пневматический ППЮ-100</a></li>
+                            <li><a href="">Пресс эксцентировый ручной</a></li>
+                        </ul>
+                    </li>
+                    -->
                 </ul>
             </div>
         </div>
