@@ -44,8 +44,8 @@ $config = [
                 'host' => 'smtp.yandex.ru',
                 'port' => '465',
                 'encryption' => 'ssl',
-                'username' => 'shtamp-cheb@yandex.ru',
-                'password' => 'shtampcheb21'
+                'username' => $params['username'],
+                'password' => $params['password']
             ]
         ],
         'log' => [
@@ -54,6 +54,18 @@ $config = [
                 [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
+                ],
+                [
+                    'class' => 'yii\log\EmailTarget',
+                    'levels' => ['error'],
+                    'message' => [
+                        'from' => $params['username'],
+                        'to' => ['olegserebryakoff@mail.ru'],
+                        'subject' => 'Shtamp-21 | Сообщение об ошибке',
+                    ],
+                    'except' => [
+                        'yii\web\HttpException:404',
+                    ],
                 ],
             ],
         ],
