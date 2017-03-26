@@ -124,7 +124,7 @@ AppAsset::register($this);
                         </ul>
                     </li>
                     <li><a href="#">Пресс-формы и литьевые формы</a></li>
-                    <li><a href="#">Фильера экструзионная</a></li>
+                    <li><a href="/filera-ekstruzionnaya">Фильера экструзионная</a></li>
                     <li>
                         <a href="#">Прессы</a>
                         <ul>
@@ -139,7 +139,7 @@ AppAsset::register($this);
                         <a href="#">Нестандартное оборудование и приспособления</a>
                         <ul>
                             <li><a href="/tsanga-mashinostroitelnaya">Цанга машиностроительная</a></li>
-                            <li><a href="#">Метчик</a></li>
+                            <li><a href="/metchik">Метчик</a></li>
                             <li><a href="#">Комплект приспособлений для опрессовки шнурка</a></li>
                         </ul>
                     </li>
