@@ -1,19 +1,19 @@
 <?php
 
-namespace app\controllers;
+namespace app\modules\admin\controllers;
 
 use Yii;
-use app\models\Files;
-use app\models\FilesSearch;
+use app\models\User;
+use app\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
 /**
- * FilesController implements the CRUD actions for Files model.
+ * UserController implements the CRUD actions for User model.
  */
-class FilesController extends Controller
+class UsersController extends Controller
 {
     public $layout = 'admin';
     /**
@@ -41,12 +41,12 @@ class FilesController extends Controller
     }
 
     /**
-     * Lists all Files models.
+     * Lists all User models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new FilesSearch();
+        $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -56,7 +56,7 @@ class FilesController extends Controller
     }
 
     /**
-     * Displays a single Files model.
+     * Displays a single User model.
      * @param integer $id
      * @return mixed
      */
@@ -68,13 +68,13 @@ class FilesController extends Controller
     }
 
     /**
-     * Creates a new Files model.
+     * Creates a new User model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Files();
+        $model = new User();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -86,7 +86,7 @@ class FilesController extends Controller
     }
 
     /**
-     * Updates an existing Files model.
+     * Updates an existing User model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -105,7 +105,7 @@ class FilesController extends Controller
     }
 
     /**
-     * Deletes an existing Files model.
+     * Deletes an existing User model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -118,15 +118,15 @@ class FilesController extends Controller
     }
 
     /**
-     * Finds the Files model based on its primary key value.
+     * Finds the User model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Files the loaded model
+     * @return User the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Files::findOne($id)) !== null) {
+        if (($model = User::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

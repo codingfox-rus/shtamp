@@ -84,12 +84,17 @@ $config = [
                 '<url:[\w\-]+>' => 'site/page',
                 //'<action>' => 'site/<action>',
                 '<controller>' => '<controller>/index',
-                'admin/<controller>' => '<controller>/index',
-                'admin/<controller>/<action>' => '<controller>/<action>',
+                //'admin/<controller>' => '<controller>/index',
+                //'admin/<controller>/<action>' => '<controller>/<action>',
             ]
         ],
     ],
     'params' => $params,
+    'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\Admin',
+        ],
+    ],
 ];
 
 if (YII_ENV_DEV) {
