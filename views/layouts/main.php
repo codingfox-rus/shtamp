@@ -64,7 +64,7 @@ AppAsset::register($this);
                                 <li><a href="/technologies">Технологии</a></li>
                                 <li><a href="/contact">Контакты</a></li>
                                 <li><a href="/novelties">Новинки</a></li>
-                                <li><a href="#">Реквизиты</a></li>
+                                <li><a href="/requisites">Реквизиты</a></li>
                                 <!--                        <li><a href="/catalog">Каталог</a></li>-->
                             </ul>
                         </div>
@@ -80,12 +80,12 @@ AppAsset::register($this);
         <div class="col-md-4">
             <div class="sidebar">
                 <ul class="left-menu">
-                    <li><a href="/catalog">Каталог</a></li>
                     <li>
                         <a href="#">Ювелирные штампы и приспособления</a>
                         <ul>
+                            <li><a href="/catalog">Штампы ювелирных цепочек и браслетов</a></li>
                             <!--
-                            <li><a href="#">Штампы ювелирных цепочек и браслетов</a></li>
+
                             <li><a href="#">Штампы ювелирные</a></li>
                             <li><a href="#">Приспособления</a></li>
                             -->
@@ -105,6 +105,7 @@ AppAsset::register($this);
                             <li><a href="/komplekt-shtampov-vyrubnyh-ruchnyh-kol">Комплект штампов вырубный ручных "Колодка для медали"</a></li>
                             <li><a href="/shtamp-vyrubnoj-ruchnoj-buhtirovannoe">Штамп вырубной ручной "бухтированное ювелирное кольцо"</a></li>
                             <li><a href="/shtamp-dlya-izgotovleniya-zamkovoj-chast">Штамп для изготовления замковой части ювелирной булавки</a></li>
+                            <li><a href="/shtamp-ruchnoj-vyrubnoj-nakladki-yuvelirnoj-tsepi">Штамп ручной вырубной "накладки ювелирной цепи"</a></li>
                             <li><a href="/zamok-yuvelirnoj-tsepi-krab">Замок ювелирной цепи "Краб"</a></li>
                             <li><a href="/zamok-yuvelirnoj-tsepi-karabin">Замок ювелирной цепи "Карабин"</a></li>
                             <!-- Приспособления -->
