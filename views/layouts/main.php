@@ -60,12 +60,10 @@ AppAsset::register($this);
                         <div class="top-menu-wrapper clearfix">
                             <ul class="top-menu">
                                 <li><a href="/">Главная</a></li>
-                                <li><a href="#">Продукция</a></li>
                                 <li><a href="/technologies">Технологии</a></li>
-                                <li><a href="/contact">Контакты</a></li>
                                 <li><a href="/novelties">Новинки</a></li>
                                 <li><a href="/requisites">Реквизиты</a></li>
-                                <!--                        <li><a href="/catalog">Каталог</a></li>-->
+                                <li><a href="/contact">Контакты</a></li>
                             </ul>
                         </div>
                     </div>
@@ -121,7 +119,7 @@ AppAsset::register($this);
                         <ul>
                             <li><a href="/shtamp-dlya-vyrubki-krugloj-pechatnoj-platy">Штамп для вырубки круглой печатной платы</a></li>
                             <li><a href="/shtamp-dlya-izgotovleniya-pribornyh-panelej">Штамп для изготовления приборной панели</a></li>
-                            <li><a href="#">Штамп для вырубки отверстия в алюминиевом профиле</a></li>
+                            <li><a href="/shtamp-dlya-vyrubki-otverstiya-v-alyuminievom-profile">Штамп для вырубки отверстия в алюминиевом профиле</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Пресс-формы и литьевые формы</a></li>
