@@ -109,7 +109,7 @@ if (YII_ENV_DEV) {
         'class' => 'yii\gii\Module',
     ];
 
-    $config['components']['db'] = require(__DIR__ . '/db-local.php');
+    //$config['components']['db'] = require(__DIR__ . '/db-local.php');
     $config['components']['assetManager']['forceCopy'] = true;
 }
 

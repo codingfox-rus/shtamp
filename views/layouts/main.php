@@ -81,7 +81,7 @@ AppAsset::register($this);
                     <li>
                         <a href="#">Ювелирные штампы и приспособления</a>
                         <ul>
-                            <li><a href="/catalog">Штампы ювелирных цепочек и браслетов</a></li>
+                            <li><a href="/catalog">Каталог ювелирных цепочек и браслетов</a></li>
                             <!--
 
                             <li><a href="#">Штампы ювелирные</a></li>
@@ -168,7 +168,7 @@ AppAsset::register($this);
 <div class="footer">
     <p>&copy; <span>Copyright</span> <?php echo date('Y'); ?> |
         СпецТехОснастка | <strong>т. 8 (8352) 36-62-62</strong> |
-        <strong><a href="mailto:shtamp-21@mail.ru">shtamp-21@mail.ru</a></strong></p>
+        <strong><a href="mailto:shtamp-21@mail.ru">shtamp-21@yandex.ru</a></strong></p>
 </div>
 
 <?php $this->endBody() ?>
