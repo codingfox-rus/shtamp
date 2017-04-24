@@ -29,13 +29,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'url:url',
             'title',
             'description:ntext',
-            [
-                'attribute' => 'content',
-                'format' => 'raw',
-                'value' => function($data){
-                    return HtmlPurifier::process($data->content);
-                }
-            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
