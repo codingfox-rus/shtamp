@@ -22,7 +22,7 @@ if ( !Yii::$app->user->isGuest ) {
                 $imgPath = Html::encode($img->image);
                 ?>
                 <li>
-                    <a href="<?= $imgPath ?>">
+                    <a href="<?= $imgPath ?>" rel="prettyPhoto">
                         <img src="<?= $imgPath ?>" alt="<?= $img->desc ?>">
                     </a>
                 </li>

@@ -13,7 +13,7 @@ $this->title = $pageTitle;
                 $imgPath = Html::encode($img->image);
     ?>
                 <li>
-                    <a href="<?= $imgPath ?>">
+                    <a href="<?= $imgPath ?>" rel="prettyPhoto">
                         <img src="<?= $imgPath ?>" alt="<?= $img->desc ?>">
                     </a>
                 </li>
