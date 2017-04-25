@@ -30,7 +30,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'url:url',
+            [
+                'attribute' => 'url',
+                'format' => 'raw',
+                'value' => Html::a(Yii::$app->request->hostInfo.'/'.$model->url, Yii::$app->request->hostInfo.'/'.$model->url, [
+                    'target' => '_blank'
+                ])
+            ],
             'title',
             'keywords',
             'description:ntext',
