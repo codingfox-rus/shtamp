@@ -26,7 +26,14 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'url:url',
+            [
+                'attribute' => 'url',
+                'format' => 'raw',
+                'value' => function($model){
+                    $url = Yii::$app->request->hostInfo . "/" . $model->url;
+                    return Html::a($url, $url);
+                }
+            ],
             'title',
             'description:ntext',
 
