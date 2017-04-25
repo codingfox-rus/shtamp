@@ -1,6 +1,6 @@
 $(function(){
-    $(".view-category-items").click(function(){
-        $(this).closest(".catalog-category").find(".category-items").slideToggle();
+    $("a[rel^='prettyPhoto']").prettyPhoto({
+        social_tools: false
     });
 });
 
