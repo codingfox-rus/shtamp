@@ -106,6 +106,8 @@ AppAsset::register($this);
                             <li><a href="/shtamp-ruchnoj-vyrubnoj-nakladki-yuvelirnoj-tsepi">Штамп ручной вырубной "накладки ювелирной цепи"</a></li>
                             <li><a href="/zamok-yuvelirnoj-tsepi-krab">Замок ювелирной цепи "Краб"</a></li>
                             <li><a href="/zamok-yuvelirnoj-tsepi-karabin">Замок ювелирной цепи "Карабин"</a></li>
+                            <li><a href="/shtamp-dekoriruyuschij-element-sergi">Штамп "Декорирующий элемент серьги"</a></li>
+                            <li><a href="/shtamp-dlya-izgotovleniya-podvesnyh-ushek">Штамп для изготовления подвесных ушек</a></li>
                             <!-- Приспособления -->
                             <li><a href="/prisposoblenie-dlya-izgotovleniya-pan">Приспособление для изготовления панцирной ювелирной цепи</a></li>
                             <li><a href="/opoka-litejnaya-tselnometallicheskaya">Опока литейная цельнометаллическая перфорированная</a></li>
@@ -120,6 +122,7 @@ AppAsset::register($this);
                             <li><a href="/shtamp-dlya-vyrubki-krugloj-pechatnoj-platy">Штамп для вырубки круглой печатной платы</a></li>
                             <li><a href="/shtamp-dlya-izgotovleniya-pribornyh-panelej">Штамп для изготовления приборной панели</a></li>
                             <li><a href="/shtamp-dlya-vyrubki-otverstiya-v-alyuminievom-profile">Штамп для вырубки отверстия в алюминиевом профиле</a></li>
+                            <li><a href="/shtamp-dlya-izgotovleniya-klemm">Штамп для изготовления клемм</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Пресс-формы и литьевые формы</a></li>
