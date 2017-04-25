@@ -1,8 +1,8 @@
 <?php
+/* @var $page mixed */
+
 use yii\helpers\Html;
 use yii\helpers\HtmlPurifier;
-
-use app\components\widgets\Spoiler;
 
 $this->title = Html::encode($page->title);
 ?>

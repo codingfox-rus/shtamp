@@ -1,9 +1,9 @@
 <?php
-
-use yii\helpers\Html;
-
 /* @var $this yii\web\View */
 /* @var $model app\models\Pages */
+/* @var $image mixed */
+
+use yii\helpers\Html;
 
 $this->title = 'Обновить страницу: ' . $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Страницы', 'url' => ['index']];
@@ -16,6 +16,7 @@ $this->params['breadcrumbs'][] = 'Обновить';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'image' => $image
     ]) ?>
 
 </div>

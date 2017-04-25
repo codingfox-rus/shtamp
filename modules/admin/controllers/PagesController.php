@@ -5,10 +5,12 @@ namespace app\modules\admin\controllers;
 use Yii;
 use app\models\Pages;
 use app\models\PagesSearch;
+use app\models\Image;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * PagesController implements the CRUD actions for Pages model.
@@ -94,12 +96,14 @@ class PagesController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $image = new Image();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'image' => $image
             ]);
         }
     }
@@ -115,6 +119,32 @@ class PagesController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    /**
+     * @return bool|\yii\web\Response
+     */
+    public function actionUploadImage()
+    {
+        if ( Yii::$app->request->isPost ) {
+            $model = new Image();
+            $model->load(Yii::$app->request->post());
+
+            $model->file = UploadedFile::getInstance($model, 'file');
+            if ( !empty($model->file) ) {
+                $path = '/img/uploads/' . $model->file->baseName . '.' . $model->file->extension;
+                if ( $model->file->saveAs( Yii::getAlias('@webroot') . $path ) ) {
+                    $model->path = $path;
+                    if ($model->save()) {
+                        return $this->redirect(Yii::$app->request->referrer);
+                    } else {
+                        var_dump($model->errors);
+                        die;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     /**

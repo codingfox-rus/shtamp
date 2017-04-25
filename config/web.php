@@ -79,7 +79,7 @@ $config = [
                 'novelties' => 'site/novelties',
                 'admin' => 'site/admin',
                 'login' => 'site/login',
-                'test' => 'site/test',
+                //'test' => 'site/test',
                 'contact' => 'site/contact',
                 '<url:[\w\-]+>' => 'site/page',
                 //'<action>' => 'site/<action>',
@@ -109,7 +109,7 @@ if (YII_ENV_DEV) {
         'class' => 'yii\gii\Module',
     ];
 
-    //$config['components']['db'] = require(__DIR__ . '/db-local.php');
+    $config['components']['db'] = require(__DIR__ . '/db-local.php');
     $config['components']['assetManager']['forceCopy'] = true;
 }
 

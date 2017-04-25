@@ -30,9 +30,9 @@ class Pages extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'description', 'content'], 'required'],
+            [['title'], 'required'],
             [['description', 'content'], 'string'],
-            [['url', 'title', 'keywords'], 'string', 'max' => 255],
+            [['url', 'title', 'keywords'], 'string', 'max' => 255]
         ];
     }
 
@@ -47,7 +47,15 @@ class Pages extends \yii\db\ActiveRecord
             'title' => 'Заголовок',
             'keywords' => 'Ключевые слова',
             'description' => 'Описание',
-            'content' => 'Контент',
+            'content' => 'Контент'
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImages()
+    {
+        return $this->hasMany(Image::className(), ['page_id' => 'id']);
     }
 }
