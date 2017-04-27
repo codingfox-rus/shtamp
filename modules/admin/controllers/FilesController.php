@@ -5,7 +5,6 @@ namespace app\modules\admin\controllers;
 use Yii;
 use app\models\Files;
 use app\models\FilesSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -13,7 +12,7 @@ use yii\filters\AccessControl;
 /**
  * FilesController implements the CRUD actions for Files model.
  */
-class FilesController extends Controller
+class FilesController extends AdminController
 {
     public $layout = 'admin';
     /**

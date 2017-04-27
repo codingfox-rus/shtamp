@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "pages".
@@ -16,6 +17,8 @@ use Yii;
  */
 class Pages extends \yii\db\ActiveRecord
 {
+    public $tags_;
+
     /**
      * @inheritdoc
      */
@@ -32,7 +35,8 @@ class Pages extends \yii\db\ActiveRecord
         return [
             [['title'], 'required'],
             [['description', 'content'], 'string'],
-            [['url', 'title', 'keywords'], 'string', 'max' => 255]
+            [['url', 'title', 'keywords'], 'string', 'max' => 255],
+            [['tags_'], 'safe']
         ];
     }
 
@@ -47,7 +51,8 @@ class Pages extends \yii\db\ActiveRecord
             'title' => 'Заголовок',
             'keywords' => 'Ключевые слова',
             'description' => 'Описание',
-            'content' => 'Контент'
+            'content' => 'Контент',
+            'tags_' => 'Тэги'
         ];
     }
 
@@ -57,5 +62,43 @@ class Pages extends \yii\db\ActiveRecord
     public function getImages()
     {
         return $this->hasMany(Image::className(), ['page_id' => 'id']);
+    }
+
+    /**
+     * @return $this
+     */
+    public function getTags()
+    {
+        return $this->hasMany(Tag::className(), ['id' => 'tag_id'])
+            ->viaTable('page_tags', ['page_id' => 'id']);
+    }
+
+    /**
+     * @return string
+     */
+    public function viewTags()
+    {
+        $tagNames = ArrayHelper::getColumn($this->tags, 'name');
+        return implode(', ', $tagNames);
+    }
+
+    public function afterFind()
+    {
+        $this->tags_ = $this->tags;
+    }
+
+    public function afterSave($insert, $changedAttributes)
+    {
+        parent::afterSave($insert, $changedAttributes);
+
+        PageTag::deleteAll(['page_id' => $this->id]);
+        if ( !empty($this->tags_) ) {
+            foreach ($this->tags_ as $tag) {
+                $model = new PageTag();
+                $model->page_id = $this->id;
+                $model->tag_id = $tag;
+                $model->save();
+            }
+        }
     }
 }

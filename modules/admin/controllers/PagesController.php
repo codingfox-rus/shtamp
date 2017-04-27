@@ -6,7 +6,6 @@ use Yii;
 use app\models\Pages;
 use app\models\PagesSearch;
 use app\models\Image;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -15,7 +14,7 @@ use yii\web\UploadedFile;
 /**
  * PagesController implements the CRUD actions for Pages model.
  */
-class PagesController extends Controller
+class PagesController extends AdminController
 {
     public $layout = 'admin';
     /**
@@ -97,6 +96,10 @@ class PagesController extends Controller
     {
         $model = $this->findModel($id);
         $image = new Image();
+
+        /*if ( Yii::$app->request->isPost ) {
+            $this->dd(Yii::$app->request->post());
+        }*/
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

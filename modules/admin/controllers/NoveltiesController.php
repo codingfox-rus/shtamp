@@ -5,7 +5,6 @@ namespace app\modules\admin\controllers;
 use Yii;
 use app\models\Novelties;
 use app\models\NoveltiesSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -13,7 +12,7 @@ use yii\filters\AccessControl;
 /**
  * NoveltiesController implements the CRUD actions for Novelties model.
  */
-class NoveltiesController extends Controller
+class NoveltiesController extends AdminController
 {
     public $layout = 'admin';
     /**

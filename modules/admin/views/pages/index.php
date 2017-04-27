@@ -39,6 +39,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'title',
             'description:ntext',
+            [
+                'attribute' => 'tags_',
+                'value' => function($model){
+                    return $model->viewTags();
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

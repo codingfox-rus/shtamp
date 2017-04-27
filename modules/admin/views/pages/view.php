@@ -45,6 +45,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
                 'value' => HtmlPurifier::process($model->content)
             ],
+            [
+                'attribute' => 'tags_',
+                'value' => $model->viewTags()
+            ]
         ],
     ]) ?>
 

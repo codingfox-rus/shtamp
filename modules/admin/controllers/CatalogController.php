@@ -5,7 +5,6 @@ namespace app\modules\admin\controllers;
 use Yii;
 use app\models\Catalog;
 use app\models\CatalogSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -13,7 +12,7 @@ use yii\filters\AccessControl;
 /**
  * CatalogController implements the CRUD actions for Catalog model.
  */
-class CatalogController extends Controller
+class CatalogController extends AdminController
 {
     public $layout = 'admin';
     /**

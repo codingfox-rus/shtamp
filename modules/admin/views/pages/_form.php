@@ -6,6 +6,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use kartik\select2\Select2;
+use app\models\Tag;
 ?>
 
 <div class="pages-form">
@@ -36,7 +39,7 @@ use yii\widgets\ActiveForm;
             <?php
                 if ( $model->images ) {
                     echo '<strong>Изображения на странице:</strong><br>';
-                    echo '<table class="table table-striped">';
+                    echo '<div>';
                     foreach ( $model->images as $img ) {
             ?>
                         <div class="row">
@@ -51,13 +54,24 @@ use yii\widgets\ActiveForm;
                         </div>
             <?php
                     }
-                    echo '</table>';
+                    echo '</div>';
                 }
             ?>
         </div>
     </div>
 
     <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+
+    <?php $data = ArrayHelper::map(Tag::find()->all(), 'id', 'name') ?>
+
+    <?= $form->field($model, 'tags_')->widget(Select2::className(), [
+        'data' => $data,
+        'options' => ['placeholder' => 'Выберите тэг...', 'multiple' => true],
+        'pluginOptions' => [
+            'tags' => true,
+            'maximumInputLength' => 10
+        ]
+    ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
