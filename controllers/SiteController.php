@@ -6,12 +6,13 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-
+use yii\helpers\ArrayHelper;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Pages;
 use app\models\Catalog;
 use app\models\Novelties;
+use app\models\Tag;
 
 class SiteController extends Controller
 {
@@ -160,6 +161,44 @@ class SiteController extends Controller
     {
         $this->layout = 'admin';
         return $this->render('admin');
+    }
+
+    /**
+     * @return string
+     */
+    public function actionGetTagCloud()
+    {
+        $tags = Tag::find()->all();
+
+        return json_encode([
+            'html' => $this->renderPartial('_partials/tag-cloud', compact('tags'))
+        ], JSON_UNESCAPED_UNICODE);
+    }
+
+    /**
+     * @param $id
+     * @return string
+     */
+    public function actionSearchByTag($id)
+    {
+        $tag = Tag::findOne($id);
+        if ( !empty($tag->pages) ) {
+            $pages = ArrayHelper::map($tag->pages, 'url', 'title');
+            return $this->render('search-by-tag', compact('tag', 'pages'));
+        } else {
+            return $this->render('search-by-tag', compact('tag'));
+        }
+    }
+
+    /**
+     * @param $data
+     */
+    public function dd($data)
+    {
+        echo '<pre>';
+        var_dump($data);
+        echo '</pre>';
+        die();
     }
 
     /*public function actionTest()

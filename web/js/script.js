@@ -2,15 +2,22 @@ $(function(){
     $("a[rel^='prettyPhoto']").prettyPhoto({
         social_tools: false
     });
-});
 
-$(document).mouseup(function (e)
-{
-    var container = $(".category-items");
+    var tagCloud = $('#tagCloud');
 
-    if (!container.is(e.target) // if the target of the click isn't the container...
-        && container.has(e.target).length === 0) // ... nor a descendant of the container
-    {
-        container.hide();
-    }
+    $.ajax({
+        type: 'POST',
+        url: 'site/get-tag-cloud',
+        dataType: 'json',
+        success: function(data){
+            tagCloud.find('ul').html(data.html);
+
+            tagCloud.tagcanvas({
+                textColour : '#555', // Цвет текста
+                outlineThickness : 1, // Обводка у ссылок (Да, Нет)
+                maxSpeed : 0.03, // Максимальная скорость
+                depth : 0.9 // Глубина. От 0 до 1
+            });
+        }
+    });
 });

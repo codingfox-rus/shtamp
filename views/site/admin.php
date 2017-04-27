@@ -8,4 +8,5 @@ $this->title = 'Панель администратора';
     <p><a href="/admin/catalog">Каталог</a></p>
     <p><a href="/admin/novelties">Новинки</a></p>
     <p><a href="/admin/files">Файлы</a></p>
+    <p><a href="/admin/tag">Тэги</a></p>
 </div>

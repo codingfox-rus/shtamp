@@ -1,4 +1,6 @@
 <?php
+/* @var $content mixed */
+
 use yii\helpers\Html;
 use app\assets\AppAsset;
 
@@ -158,6 +160,14 @@ AppAsset::register($this);
                     </li>
                     -->
                 </ul>
+
+                <div style="text-align: center">
+                    <canvas width="300" height="250" id="tagCloud">
+                        <ul>
+                            <!-- Ajax loading -->
+                        </ul>
+                    </canvas>
+                </div>
             </div>
         </div>
         <div class="col-md-8">

@@ -81,6 +81,7 @@ $config = [
                 'login' => 'site/login',
                 //'test' => 'site/test',
                 'contact' => 'site/contact',
+                'search-by-tag' => 'site/search-by-tag',
                 '<url:[\w\-]+>' => 'site/page',
                 //'<action>' => 'site/<action>',
                 '<controller>' => '<controller>/index',
