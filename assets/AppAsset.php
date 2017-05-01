@@ -30,9 +30,9 @@ class AppAsset extends AssetBundle
         'spoiler/spoiler.js',
         'js/script.js',
         'js/widgets/spoiler.js',
-        'js/fixes.js',
         'js/jquery.tagcanvas.min.js',
         'ckeditor/ckeditor.js',
+        'js/fixes.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

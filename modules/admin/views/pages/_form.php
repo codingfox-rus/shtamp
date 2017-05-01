@@ -60,7 +60,10 @@ use app\models\Tag;
         </div>
     </div>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'content')->textarea([
+        'rows' => 6,
+        'class' => 'ckeditor'
+    ]) ?>
 
     <?php $data = ArrayHelper::map(Tag::find()->all(), 'id', 'name') ?>
 
@@ -111,4 +114,10 @@ use app\models\Tag;
         </div>
 <?php
     }
+?>
+
+<?php
+    $this->registerJsFile('/js/fixes.js', [
+        'depends' => [\yii\web\JqueryAsset::className()]
+    ]);
 ?>

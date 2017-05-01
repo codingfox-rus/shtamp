@@ -41,7 +41,7 @@ class PagesSearch extends Pages
      */
     public function search($params)
     {
-        $query = Pages::find()->orderBy('id desc');
+        $query = Pages::find();
 
         // add conditions that should always apply here
 
