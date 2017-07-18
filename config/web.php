@@ -65,6 +65,7 @@ $config = [
                     ],
                     'except' => [
                         'yii\web\HttpException:404',
+                        'yii\db\Exception'
                     ],
                 ],
             ],
