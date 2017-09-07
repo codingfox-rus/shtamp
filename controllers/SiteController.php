@@ -136,12 +136,15 @@ class SiteController extends Controller
             Yii::$app->session->setFlash('contactFormSubmitted');
             $to = Yii::$app->params['adminEmail'];
             $from = Yii::$app->params['contactEmail'];
-
-            Yii::$app->mailer->compose()
+            $message = [];
+            $message['name'] = $model->name;
+            $message['email'] = $model->email;
+            $message['message'] = $model->message;
+            
+            Yii::$app->mailer->compose('contact', ['message' => $message])
                 ->setTo($to)
                 ->setFrom([$from => Yii::$app->name])
                 ->setSubject($model->subject)
-                ->setTextBody($model->message)
                 ->send();
 
             return $this->refresh();
