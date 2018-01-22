@@ -36,6 +36,7 @@ class PagesController extends AdminController
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                    'delete-image' => ['POST'],
                 ],
             ],
         ];
@@ -165,4 +166,6 @@ class PagesController extends AdminController
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    
+    
 }

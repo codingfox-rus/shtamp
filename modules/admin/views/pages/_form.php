@@ -23,47 +23,46 @@ use app\models\Tag;
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    <div class="row">
-        <div class="col-md-6">
-            <?php
-            if ( !$model->isNewRecord ) {
-                echo Html::a('Загрузить изображение', '#', [
-                    'class' => 'btn btn-success upload-image-to-page',
-                    'data-toggle' => 'modal',
-                    'data-target' => '#upload-image'
-                ]);
-            }
-            ?>
-        </div>
-        <div class="col-md-6">
-            <?php
-                if ( $model->images ) {
-                    echo '<strong>Изображения на странице:</strong><br>';
-                    echo '<div>';
-                    foreach ( $model->images as $img ) {
-            ?>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <?= $img->path ?>
-                            </div>
-                            <div class="col-md-6">
-                                <?= Html::a($img->title, Yii::getAlias('@web') . $img->path, [
-                                    'target' => '_blank'
-                                ]) ?>
-                            </div>
-                        </div>
-            <?php
-                    }
-                    echo '</div>';
-                }
-            ?>
-        </div>
-    </div>
-
     <?= $form->field($model, 'content')->textarea([
         'rows' => 6,
         'class' => 'ckeditor'
     ]) ?>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <?php if (!$model->isNewRecord): ?>
+                <?= Html::a('Загрузить изображение', '#', [
+                    'class' => 'btn btn-success upload-image-to-page',
+                    'data-toggle' => 'modal',
+                    'data-target' => '#upload-image'
+                ]); ?>
+            <?php endif; ?>
+            
+            <?php if ($model->images): ?>
+                <br>
+                <table class="table">
+                <?php foreach ($model->images as $img): ?>
+                    <tr>
+                        <td><?= $img->path ?></td>
+                        <td>
+                            <?= Html::img(Yii::getAlias('@web') . $img->path, [
+                                'style' => 'width: 200px;'
+                            ]) ?>
+                        </td>
+                        <td>
+                            <?= Html::a('Удалить', ['delete-image', 'id' => $img->id], [
+                                'class' => 'btn btn-danger btn-xs',
+                                'data' => [
+                                    'method' => 'post'
+                                ]
+                            ]) ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </table>
+            <?php endif; ?>
+        </div>
+    </div>
 
     <?php $data = ArrayHelper::map(Tag::find()->all(), 'id', 'name') ?>
 
