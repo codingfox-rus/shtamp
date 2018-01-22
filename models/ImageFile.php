@@ -80,7 +80,7 @@ class ImageFile extends \yii\db\ActiveRecord
                 $img = Image::getImagine()->open($fullPath);
                 $width = $img->getSize()->getWidth();
                 if ($width > self::IMAGE_WIDTH){
-                    Image::thumbnail($fullPath, $width)->save($fullPath);
+                    Image::thumbnail($fullPath, $width, null)->save($fullPath);
                 }
                 
                 $this->path = $path;
