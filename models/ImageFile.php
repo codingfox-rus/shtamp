@@ -77,7 +77,7 @@ class ImageFile extends \yii\db\ActiveRecord
             $path = '/img/uploads/' . $this->file->baseName . '.' . $this->file->extension;
             $fullPath = Yii::getAlias('@webroot') . $path;
             if ($this->file->saveAs($fullPath)){
-                $img = Image::getImagine()->open($path);
+                $img = Image::getImagine()->open($fullPath);
                 $width = $img->getSize()->getWidth();
                 if ($width > self::IMAGE_WIDTH){
                     Image::thumbnail($fullPath, $width)->save($fullPath);
