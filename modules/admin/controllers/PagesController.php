@@ -5,11 +5,11 @@ namespace app\modules\admin\controllers;
 use Yii;
 use app\models\Pages;
 use app\models\PagesSearch;
-use app\models\Image;
+use app\models\ImageFile;
 use yii\web\NotFoundHttpException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
-use yii\web\UploadedFile;
+
 
 /**
  * PagesController implements the CRUD actions for Pages model.
@@ -36,6 +36,7 @@ class PagesController extends AdminController
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                    'delete-image' => ['POST'],
                 ],
             ],
         ];
@@ -95,7 +96,7 @@ class PagesController extends AdminController
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $image = new Image();
+        $image = new ImageFile();
 
         /*if ( Yii::$app->request->isPost ) {
             $this->dd(Yii::$app->request->post());
@@ -130,21 +131,12 @@ class PagesController extends AdminController
     public function actionUploadImage()
     {
         if ( Yii::$app->request->isPost ) {
-            $model = new Image();
+            $model = new ImageFile();
             $model->load(Yii::$app->request->post());
-
-            $model->file = UploadedFile::getInstance($model, 'file');
-            if ( !empty($model->file) ) {
-                $path = '/img/uploads/' . $model->file->baseName . '.' . $model->file->extension;
-                if ( $model->file->saveAs( Yii::getAlias('@webroot') . $path ) ) {
-                    $model->path = $path;
-                    if ($model->save()) {
-                        return $this->redirect(Yii::$app->request->referrer);
-                    } else {
-                        var_dump($model->errors);
-                        die;
-                    }
-                }
+            if ($model->uploadAndSave()){
+                return $this->redirect(Yii::$app->request->referrer);
+            } else {
+                throw new \Exception(print_r($model->errors, true));
             }
         }
         return false;
@@ -165,4 +157,18 @@ class PagesController extends AdminController
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    
+    /**
+     * @param type $id
+     * @return type
+     */
+    public function actionDeleteImage($id)
+    {
+        $image = ImageFile::findOne($id);
+        if ($image){
+            $image->delete();
+        }
+        
+        return $this->redirect(Yii::$app->request->referrer);
+    }    
 }
