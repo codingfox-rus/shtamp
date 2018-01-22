@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\imagine\Image;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "images".
@@ -15,9 +17,10 @@ use Yii;
  *
  * @property Pages $page
  */
-class Image extends \yii\db\ActiveRecord
+class ImageFile extends \yii\db\ActiveRecord
 {
     public $file;
+    const IMAGE_WIDTH = 1024;
 
     /**
      * @inheritdoc
@@ -62,4 +65,31 @@ class Image extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Pages::className(), ['id' => 'page_id']);
     }
+    
+    /**
+     * Загружаем файл изображения, сохраняем его и запись в таблице
+     * @return boolean
+     */
+    public function uploadAndSave()
+    {
+        $this->file = UploadedFile::getInstance($this, 'file');
+        if (!empty($this->file)){
+            $path = '/img/uploads/' . $this->file->baseName . '.' . $this->file->extension;
+            $fullPath = Yii::getAlias('@webroot') . $path;
+            if ($this->file->saveAs($fullPath)){
+                $img = Image::getImagine()->open($path);
+                $width = $img->getSize()->getWidth();
+                if ($width > self::IMAGE_WIDTH){
+                    Image::thumbnail($fullPath, $width)->save($fullPath);
+                }
+                
+                $this->path = $path;
+                if ($this->save()){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+    }        
 }
