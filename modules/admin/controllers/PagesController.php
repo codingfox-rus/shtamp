@@ -96,7 +96,7 @@ class PagesController extends AdminController
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $image = new Image();
+        $image = new ImageFile();
 
         /*if ( Yii::$app->request->isPost ) {
             $this->dd(Yii::$app->request->post());
@@ -158,5 +158,17 @@ class PagesController extends AdminController
         }
     }
     
-    
+    /**
+     * @param type $id
+     * @return type
+     */
+    public function actionDeleteImage($id)
+    {
+        $image = ImageFile::findOne($id);
+        if ($image){
+            $image->delete();
+        }
+        
+        return $this->redirect(Yii::$app->request->referrer);
+    }    
 }

@@ -37,9 +37,10 @@ use app\models\Tag;
                     'data-target' => '#upload-image'
                 ]); ?>
             <?php endif; ?>
+            <br>
             
             <?php if ($model->images): ?>
-                <br>
+                
                 <table class="table">
                 <?php foreach ($model->images as $img): ?>
                     <tr>

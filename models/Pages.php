@@ -61,7 +61,7 @@ class Pages extends \yii\db\ActiveRecord
      */
     public function getImages()
     {
-        return $this->hasMany(Image::className(), ['page_id' => 'id']);
+        return $this->hasMany(ImageFile::className(), ['page_id' => 'id']);
     }
 
     /**

@@ -91,5 +91,18 @@ class ImageFile extends \yii\db\ActiveRecord
                 }
             }
         }
-    }        
+    }  
+    
+    /**
+     * @return type
+     */
+    public function beforeDelete() 
+    {
+        $filePath = Yii::getAlias('@webroot') .'/'. $this->path;
+        if (file_exists($filePath)){
+            unlink($filePath);
+        }
+        
+        return parent::beforeDelete();
+    }
 }
