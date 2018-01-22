@@ -96,6 +96,7 @@ AppAsset::register($this);
                             <li><a href="/komplekt-shtampov-yuvelirnaya-shvenza">Комплект штампов ювелирная швенза</a></li>
                             <li><a href="/shtamp-kontsevik-dlya-yuvelirnoj-tsepi">Штамп концевик для ювелирной цепи</a></li>
                             <li><a href="/shtamp-ruchnoj-vyrubnoj-pusseta">Штамп ручной вырубной "пуссета"</a></li>
+                            <li><a href="/shtamp-dlya-izgotovleniya-kasta">Штамп для изготовления каста</a></li>
                             <li><a href="/shtamp-sovmeshhennogo-dejstviya-element">Штамп совмещенного действия элемент "подвеска"</a></li>
                             <li><a href="/shtamp-chekanochnyj-yuvelirnyj-ikonka">Штамп чеканочный ювелирный "иконка"</a></li>
                             <li><a href="/shtamp-yuvelirnyj-vyrubnoj-krest">Штамп ювелирный вырубной "крест"</a></li>
@@ -103,6 +104,7 @@ AppAsset::register($this);
                             <li><a href="/shtamp-ruchnoj-vyrubnoj-polumesyats">Штамп ручной вырубной "полумесяц"</a></li>
                             <li><a href="/shtamp-poluavtomaticheskij-shagovyj-zv">Штамп полуавтоматический шаговый "звено цепи"</a></li>
                             <li><a href="/komplekt-shtampov-vyrubnyh-ruchnyh-kol">Комплект штампов вырубный ручных "Колодка для медали"</a></li>
+                            <li><a href="/shtamp-dlya-izgotovleniya-medali">Штамп для изготовления медали</a></li>
                             <li><a href="/shtamp-vyrubnoj-ruchnoj-buhtirovannoe">Штамп вырубной ручной "бухтированное ювелирное кольцо"</a></li>
                             <li><a href="/shtamp-dlya-izgotovleniya-zamkovoj-chast">Штамп для изготовления замковой части ювелирной булавки</a></li>
                             <li><a href="/shtamp-ruchnoj-vyrubnoj-nakladki-yuvelirnoj-tsepi">Штамп ручной вырубной "накладки ювелирной цепи"</a></li>
@@ -110,8 +112,10 @@ AppAsset::register($this);
                             <li><a href="/zamok-yuvelirnoj-tsepi-karabin">Замок ювелирной цепи "Карабин"</a></li>
                             <li><a href="/shtamp-dekoriruyuschij-element-sergi">Штамп "Декорирующий элемент серьги"</a></li>
                             <li><a href="/shtamp-dlya-izgotovleniya-podvesnyh-ushek">Штамп для изготовления подвесных ушек</a></li>
+                            <li><a href="/shtamp-dlya-izgotovleniya-grebnyh-vintov-sudomodelirovaniya">Штамп для изготовления гребных винтов судомоделирования</a></li>
                             <!-- Приспособления -->
                             <li><a href="/prisposoblenie-dlya-izgotovleniya-pan">Приспособление для изготовления панцирной ювелирной цепи</a></li>
+                            <li><a href="/prisposoblenie-dlya-pressovaniya-opilok">Приспособление для прессования опилок</a></li>
                             <li><a href="/opoka-litejnaya-tselnometallicheskaya">Опока литейная цельнометаллическая перфорированная</a></li>
                             <li><a href="/smennyj-valik-k-yuvelirnym-valtsam">Сменный валик к ювелирным вальцам</a></li>
                             <li><a href="/filiera">Фильера для изготовления полой трубки</a></li>
@@ -123,7 +127,9 @@ AppAsset::register($this);
                         <ul>
                             <li><a href="/shtamp-dlya-vyrubki-krugloj-pechatnoj-platy">Штамп для вырубки круглой печатной платы</a></li>
                             <li><a href="/shtamp-dlya-izgotovleniya-pribornyh-panelej">Штамп для изготовления приборной панели</a></li>
-                            <li><a href="/shtamp-dlya-vyrubki-otverstiya-v-alyuminievom-profile">Штамп для вырубки отверстия в алюминиевом профиле</a></li>
+                            <li><a href="/shtamp-dlya-izgotovleniya-mednyh-prokladok">Штамп для изготовления медных прокладок</a></li>
+                            <li><a href="/shtamp-dlya-vyrubki-otverstiya-v-metallicheskom-profile">Штамп для вырубки отверстия в металлическом профиле</a></li>
+                            <li><a href="/shtamp-dlya-izgotovleniya-homuta">Штамп для изготовления хомута</a></li>
                             <li><a href="/shtamp-dlya-izgotovleniya-klemm">Штамп для изготовления клемм</a></li>
                         </ul>
                     </li>
@@ -144,7 +150,7 @@ AppAsset::register($this);
                         <ul>
                             <li><a href="/tsanga-mashinostroitelnaya">Цанга машиностроительная</a></li>
                             <li><a href="/metchik">Метчик</a></li>
-                            <li><a href="#">Комплект приспособлений для опрессовки шнурка</a></li>
+                            <li><a href="/komplekt-prisposoblenij-dlya-opressovki-shnurka">Комплект приспособлений для опрессовки шнурка</a></li>
                         </ul>
                     </li>
                     <!--
