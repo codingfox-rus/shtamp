@@ -36,7 +36,7 @@ class ImageFile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['page_id', 'path', 'title'], 'required'],
+            [['page_id', 'path', 'file'], 'required'],
             [['page_id'], 'integer'],
             [['path', 'title'], 'string', 'max' => 255],
             [['page_id'], 'exist', 'skipOnError' => true, 'targetClass' => Pages::className(), 'targetAttribute' => ['page_id' => 'id']],
@@ -83,6 +83,7 @@ class ImageFile extends \yii\db\ActiveRecord
                     Image::thumbnail($fullPath, self::IMAGE_WIDTH, null)->save($fullPath);
                 }
                 
+                $this->title = $this->file->baseName;
                 $this->path = $path;
                 if ($this->save()){
                     return true;
