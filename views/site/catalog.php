@@ -10,14 +10,16 @@ $this->title = $pageTitle;
     <?php
         if ( !empty($images) ) {
             foreach ($images as $img) {
+                $imgIndex = 1;
                 $imgPath = Html::encode($img->image);
     ?>
                 <li>
-                    <a href="<?= $imgPath ?>" rel="prettyPhoto">
+                    <a href="<?= $imgPath ?>" data-lightbox="Image-<?= $imgIndex ?>">
                         <img src="<?= $imgPath ?>" alt="<?= $img->desc ?>">
                     </a>
                 </li>
     <?php
+                $imgIndex += 1;
             }
         }
     ?>

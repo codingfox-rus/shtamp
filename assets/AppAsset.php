@@ -18,15 +18,17 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
-        'css/font-awesome.css',
         'prettyPhoto/css/prettyPhoto.css',
+        'css/font-awesome.css',
+        'lightbox2/src/css/lightbox.css',
+        'css/site.css',
         'spoiler/spoiler.css',
         'css/style.css',
-        'css/widgets/spoiler.css'
+        'css/widgets/spoiler.css',
     ];
     public $js = [
         'prettyPhoto/js/jquery.prettyPhoto.js',
+        'lightbox2/src/js/lightbox.js',
         'spoiler/spoiler.js',
         'js/script.js',
         'js/widgets/spoiler.js',

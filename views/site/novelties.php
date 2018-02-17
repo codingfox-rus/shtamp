@@ -16,19 +16,21 @@ if ( !Yii::$app->user->isGuest ) {
 ?>
 <div class="gallery-img-wrapper clearfix">
     <ul>
-        <?php
-        if ( !empty($images) ) {
+    <?php
+        if (!empty($images)) {
             foreach ($images as $img) {
+                $imgIndex = 1;
                 $imgPath = Html::encode($img->image);
-                ?>
+        ?>
                 <li>
-                    <a href="<?= $imgPath ?>" rel="prettyPhoto">
+                    <a href="<?= $imgPath ?>" data-lightbox="Image-<?= $imgIndex ?>">
                         <img src="<?= $imgPath ?>" alt="<?= $img->desc ?>">
                     </a>
                 </li>
-                <?php
+    <?php
+                $imgIndex += 1;
             }
         }
-        ?>
+    ?>
     </ul>
 </div>
