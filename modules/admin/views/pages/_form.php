@@ -101,7 +101,6 @@ use app\models\Tag;
                                 'enctype' => 'multipart/form-data'
                             ]
                         ]) ?>
-                            <?= $form->field($image, 'title') ?>
                             <?= $form->field($image, 'file')->fileInput() ?>
                             <?= $form->field($image, 'page_id')->hiddenInput(['value' => $model->id])->label(false) ?>
                             <div class="form-group">
