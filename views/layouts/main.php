@@ -50,7 +50,7 @@ AppAsset::register($this);
                                     </td>
                                     <td>
                                         т. 8 (8352) 36-62-62 <br>
-                                        <a href="mailto:shtamp-21@mail.ru">shtamp-21@yandex.ru</a>
+                                        <a href="mailto:shtamp-21@mail.ru">shtamp-21@mail.ru</a>
                                     </td>
                                 </tr>
                             </table>
