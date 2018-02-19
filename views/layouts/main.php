@@ -50,7 +50,7 @@ AppAsset::register($this);
                                     </td>
                                     <td>
                                         т. 8 (8352) 36-62-62 <br>
-                                        <a href="mailto:shtamp-21@mail.ru">shtamp-21@mail.ru</a>
+                                        <a href="mailto:shtamp-21@yandex.ru">shtamp-21@yandex.ru</a>
                                     </td>
                                 </tr>
                             </table>
@@ -187,7 +187,7 @@ AppAsset::register($this);
 <div class="footer">
     <p>&copy; <span>Copyright</span> <?php echo date('Y'); ?> |
         СпецТехОснастка | <strong>т. 8 (8352) 36-62-62</strong> |
-        <strong><a href="mailto:shtamp-21@mail.ru">shtamp-21@mail.ru</a></strong></p>
+        <strong><a href="mailto:shtamp-21@yandex.ru">shtamp-21@yandex.ru</a></strong></p>
 </div>
 
 <?php $this->endBody() ?>
