@@ -3,13 +3,14 @@
 namespace app\models;
 
 use Yii;
+use himiklab\yii2\recaptcha\ReCaptchaValidator;
 
 /**
  * ContactForm is the model behind the contact form.
  */
 class ContactForm extends \yii\db\ActiveRecord
 {
-    public $verifyCode;
+    public $reCaptcha;
 
     public static function tableName()
     {
@@ -23,12 +24,12 @@ class ContactForm extends \yii\db\ActiveRecord
     {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'subject', 'message'], 'required'],
+            [['name', 'email', 'subject', 'message'], 'required', 'message' => 'Поле обязательно для заполнения'],
             // email has to be a valid email address
             ['email', 'email'],
             ['date', 'safe'],
             // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha'],
+            [['reCaptcha'], ReCaptchaValidator::className(), 'secret' => Yii::$app->params['secretKey'], 'uncheckedMessage' => 'Пожалуйста, пройдите проверку'],
         ];
     }
 
@@ -43,7 +44,7 @@ class ContactForm extends \yii\db\ActiveRecord
             'subject' => 'Тема',
             'message' => 'Сообщение',
             'date' => 'Дата',
-            'verifyCode' => 'Проверочный код',
+            'reCaptcha' => 'Проверка',
         ];
     }
 

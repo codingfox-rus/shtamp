@@ -5,6 +5,7 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'name' => 'СпецТехОснастка - Ювелирные штампы и инструменты',
+    'language' => 'ru',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
@@ -41,9 +42,9 @@ $config = [
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.yandex.ru',
-                'port' => '465',
-                'encryption' => 'ssl',
+                'host' => 'smtp.locum.ru',
+                //'port' => '465',
+                //'encryption' => 'ssl',
                 'username' => $params['username'],
                 'password' => $params['password']
             ]
@@ -90,6 +91,12 @@ $config = [
                 //'admin/<controller>/<action>' => '<controller>/<action>',
             ]
         ],
+        'reCaptcha' => [
+            'name' => 'reCaptcha',
+            'class' => 'himiklab\yii2\recaptcha\ReCaptcha',
+            'siteKey' => $params['siteKey'],
+            'secret' => $params['secretKey'],
+        ],
     ],
     'params' => $params,
     'modules' => [
@@ -113,6 +120,7 @@ if (YII_ENV_DEV) {
 
     $config['components']['db'] = require(__DIR__ . '/db-local.php');
     $config['components']['assetManager']['forceCopy'] = true;
+    $config['params']['adminEmail'] = 'olegserebryakoff@mail.ru';
 }
 
 return $config;
