@@ -6,7 +6,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-use yii\captcha\Captcha;
+use himiklab\yii2\recaptcha\ReCaptcha;
 
 $this->title = 'Форма обратной связи';
 $this->params['breadcrumbs'][] = $this->title;
@@ -28,9 +28,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     <?= $form->field($model, 'message')->textArea(['rows' => 6]) ?>
 
-                    <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                        'template' => '<div class="row"><div class="col-lg-4">{image}</div><div class="col-lg-6">{input}</div></div>',
-                    ]) ?>
+                    <?= $form->field($model, 'reCaptcha')->widget(ReCaptcha::className(), [
+                        'siteKey' => Yii::$app->params['siteKey']
+                        //'template' => '<div class="row"><div class="col-lg-4">{image}</div><div class="col-lg-6">{input}</div></div>',
+                    ])->label(false) ?>
 
                     <div class="form-group">
                         <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
