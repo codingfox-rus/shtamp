@@ -45,7 +45,7 @@ $config = [
                 'host' => 'smtp.locum.ru',
                 //'port' => '465',
                 //'encryption' => 'ssl',
-                'username' => $params['username'],
+                'username' => $params['contactEmail'],
                 'password' => $params['password']
             ]
         ],
@@ -60,7 +60,7 @@ $config = [
                     'class' => 'yii\log\EmailTarget',
                     'levels' => ['error'],
                     'message' => [
-                        'from' => $params['username'],
+                        'from' => $params['contactEmail'],
                         'to' => ['olegserebryakoff@mail.ru'],
                         'subject' => 'Shtamp-21 | Сообщение об ошибке',
                     ],
